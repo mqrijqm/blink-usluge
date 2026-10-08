@@ -80,6 +80,30 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+  .rv-card {
+    opacity: 0;
+    transform: translateY(70px);
+  }
+}
+
+/* Radovi: crno-bijelo niskog kontrasta, na hover/fokus originalne boje */
+.work-img {
+  filter: grayscale(1) contrast(0.62) brightness(1.12);
+  transition: filter 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.work-card:hover .work-img,
+.work-card:focus-visible .work-img {
+  filter: none;
+  transform: scale(1.03);
+}
+@media (prefers-reduced-motion: reduce) {
+  .work-img {
+    transition: filter 0.3s;
+  }
+  .work-card:hover .work-img,
+  .work-card:focus-visible .work-img {
+    transform: none;
+  }
 }
 
 /* ---------- Tekst u uglovima: riječ po riječ izlazi iz maske ---------- */

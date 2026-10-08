@@ -6,7 +6,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { links } from "@/data/services";
 
 const items = [
-  { label: "Radovi", href: links.radovi },
+  { label: "Radovi", href: "#radovi" },
   { label: "Usluge", href: links.usluge, active: true },
   { label: "Proizvodi", href: links.proizvodi },
   { label: "Studio", href: links.studio },

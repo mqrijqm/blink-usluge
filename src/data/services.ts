@@ -55,8 +55,8 @@ export const services: Service[] = [
     p1: "Od ideje do lansiranog proizvoda, brzo, fokusirano i bez suvišnog. Prvu verziju gradimo tako da uči iz stvarnih korisnika.",
     p2: "Umjesto velikog plana koji čeka, isporučujemo malo i često. Svaka iteracija donosi podatke na osnovu kojih odlučujemo šta dalje.",
     price: "Prototip od 1.500 € · 1–2 sedmice",
-    image: "/img/ai/panel-4-mramor.webp",
-    alt: "Ploča bijelog mramora sa sivim žilama na tamnoj pozadini sa finim zrnom",
+    image: "/img/ai/panel-4-svjetlo.webp",
+    alt: "Ploča bijelog mramora sa sivim žilama, preko koje pada zlatno svjetlo kroz prozor",
     link: { label: "omaska.app", href: "https://omaska.app" },
   },
   {
@@ -103,8 +103,6 @@ export const showcase: Showcase[] = [
   { ...w("v7-mlijeko"), shape: "portrait", alt: "Golden Standard barista mlijeko, četiri tetrapaka u rukama" },
   { ...w("h7-hermes"), shape: "landscape", alt: "Arky: pozadina sajta na jednom mjestu, kameni Hermes sa modulima" },
   { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž" },
-  { ...w("h4-nova-forma"), shape: "landscape", alt: "Nova Forma, atelje za svjetlo, naslovna stranica" },
-  { ...w("v3-arky-app"), shape: "portrait", alt: "Arky aplikacija, mreža sa narandžastim pikselima" },
   { ...w("h5-orbita"), shape: "landscape", alt: "Nova Forma Orbita, svjetiljka od opala na plavom zidu" },
   { ...w("v5-decade"), shape: "portrait", alt: "Tipografski poster: šta jedna decenija rada postane" },
 ];
@@ -129,16 +127,46 @@ const pairs: { right: string; left: string }[] = [
   { right: "Ostajemo i poslije objave.", left: "Održavanje i dalji razvoj dogovaramo prije predaje." },
 ];
 
-export const inspo: Inspo[] = pairs.flatMap((pair, n) => {
+// Par n počinje na slici n + 1, pa parova ima najviše koliko i slika bez prve. Višak se ne prikazuje
+// (inače bi se na zadnjoj slici preklopila dva para u istim uglovima).
+export const inspo: Inspo[] = pairs.slice(0, showcase.length - 1).flatMap((pair, n) => {
   const isA = n % 2 === 0;
-  // Zadnji parovi ne smiju izaći izvan broja slika (zadnja slika drži zadnja dva para).
-  const from = Math.min(n + 1, showcase.length - 1);
+  const from = n + 1;
   const to = n + 3;
   return [
     { text: pair.right, slot: (isA ? "tr" : "br") as InspoSlot, from, to },
     { text: pair.left, slot: (isA ? "bl" : "tl") as InspoSlot, from, to },
   ];
 });
+
+export type Rad = { name: string; kind: string; slug: string; img: string; alt: string };
+
+// Radovi i proizvodi sa studioblink.ba (kartice, opisi i case stranice su sa landinga).
+const r = (name: string, kind: string, slug: string, img: string, alt: string): Rad => ({
+  name,
+  kind,
+  slug,
+  img: `/img/radovi/${img}.webp`,
+  alt,
+});
+export const radovi: Rad[] = [
+  r("Urbano", "Naš proizvod", "case-urbano", "urbano", "Urbano, mapa Banje Luke s prijavama građana"),
+  r("Golden Standard", "Identitet, sajt i B2B platforma", "case-golden-standard", "golden-standard", "Golden Standard, aktuelni prikaz sajta i barista mlijeka"),
+  r("Omaška", "Naš proizvod", "case-omaska", "omaska", "Omaška, sistem za klinike"),
+  r("U izlogu", "AI studio za artikle", "case-u-izlogu", "uizlogu", "U izlogu, studio za artikle"),
+  r("Longi", "Sajt prodavnice namještaja", "case-longi", "longi", "Longi, prikaz sajta prodavnice namještaja"),
+  r("Dr. Krnetić", "Demonstracija sajta", "case-krnetic", "krnetic", "Dr. Krnetić, demonstracija sajta"),
+  r("Lana Zrnić", "Identitet i sajt", "case-lana-zrnic", "lana", "Lana Zrnić, identitet i sajt"),
+  r("Smart AI Curator", "AI platforma", "case-smart-ai-curator", "curator", "Smart AI Curator, AI platforma"),
+  r("Pčelarstvo Jevtić", "Sajt i prodavnica", "case-pcelarstvo-jevtic", "pcelarstvo-jevtic", "Pčelarstvo Jevtić, sajt i prodavnica"),
+  r("jjovan.com", "Lični sajt", "case-jjovan", "jjovan", "jjovan.com, kadrovi poglavlja ličnog sajta"),
+  r("MT Ponos", "Prijedlog redizajna sajta", "case-mt-ponos", "mtponos", "MT Ponos, prijedlog redizajna sajta za podne obloge"),
+  r("Ihtis", "Sajt riblje kuhinje i ribarnice", "case-ihtis", "ihtis", "Ihtis, sajt riblje kuhinje i ribarnice"),
+  r("Drvex", "Sajt sa 3D kuhinjom", "case-drvex", "drvex", "Drvex, sajt sa 3D kuhinjom koja se sklapa"),
+  r("Lunara", "Koncept identiteta i sajta", "case-lunara", "lunara", "Lunara, koncept identiteta i sajta"),
+  r("Nova Forma", "Identitet i animirani sajt", "case-nova-forma", "nova-forma", "Nova Forma, identitet i animirani sajt"),
+];
+
 export const links = {
   radovi: "https://studioblink.ba/?lang=bs#radovi",
   usluge: "https://studioblink.ba/usluge?lang=bs",
@@ -148,6 +176,7 @@ export const links = {
   email: "mailto:kontakt@studioblink.ba",
   jjovan: "https://jjovan.com",
 };
+
 
 
 
