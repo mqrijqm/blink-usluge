@@ -10,6 +10,8 @@ export type Service = {
   price: string;
   image: string;
   alt: string;
+  /** opcioni link ispod drugog paragrafa (tanki pravougaonik sa strelicom) */
+  link?: { label: string; href: string };
 };
 
 export const services: Service[] = [
@@ -42,6 +44,7 @@ export const services: Service[] = [
     price: "Obim i cijena prije rada",
     image: "/img/ai/panel-3.webp",
     alt: "Apstraktna slika: topografske konture i mreža gradskih blokova sa jednom narandžastom oznakom",
+    link: { label: "urbano.ba", href: "https://urbano.ba" },
   },
   {
     n: "04",

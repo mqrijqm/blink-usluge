@@ -105,9 +105,31 @@ export default function Panels() {
                 <div className="label mb-4 text-ink/50 max-md:hidden">{s.n}</div>
                 <p className="text-[13.5px] leading-[1.65] text-ink/85">{s.p1}</p>
               </div>
-              <p className="order-3 text-[13px] leading-[1.65] text-ink/58 md:order-none md:pt-[calc(11px*1.5+1rem)]">
-                {s.p2}
-              </p>
+              <div className="order-3 md:order-none md:pt-[calc(11px*1.5+1rem)]">
+                <p className="text-[13px] leading-[1.65] text-ink/58">{s.p2}</p>
+                {s.link && (
+                  <a
+                    href={s.link.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="group mt-5 inline-flex h-10 items-center gap-3 border border-ink/70 px-4 text-[13px] font-normal text-ink transition-colors duration-300 hover:bg-ink hover:text-bg"
+                  >
+                    {s.link.label}
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="1.5"
+                      aria-hidden="true"
+                      className="transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
+                    >
+                      <path d="M7 17 17 7M8 7h9v9" />
+                    </svg>
+                  </a>
+                )}
+              </div>
               <div className="order-1 flex flex-col md:order-none md:items-end md:text-right">
                 <div className="label mb-3 flex w-full justify-between gap-4 text-ink/55 md:justify-end md:gap-0">
                   <span className="md:hidden">{s.n}</span>
