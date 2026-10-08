@@ -1,15 +1,17 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { links } from "@/data/services";
 
+// Usluge i Proizvodi su stranice ovog projekta (obični linkovi = puno učitavanje, pa se skrol i animacije uvijek čisto pokrenu).
 const items = [
-  { label: "Radovi", href: "#radovi" },
-  { label: "Usluge", href: links.usluge, active: true },
-  { label: "Proizvodi", href: links.proizvodi },
-  { label: "Studio", href: links.studio },
+  { label: "Radovi", href: links.radovi, path: "" },
+  { label: "Usluge", href: "/usluge", path: "/usluge" },
+  { label: "Proizvodi", href: "/proizvodi", path: "/proizvodi" },
+  { label: "Studio", href: links.studio, path: "" },
 ];
 
 function Logo() {
@@ -27,6 +29,9 @@ function Logo() {
 }
 
 export default function Nav() {
+  const pathname = usePathname();
+  // Početna stranica (/) je ista kao /usluge.
+  const current = pathname === "/" ? "/usluge" : pathname;
   const [solid, setSolid] = useState(false);
   const [dark, setDark] = useState(false);
 
@@ -63,7 +68,7 @@ export default function Nav() {
             <a
               key={it.label}
               href={it.href}
-              aria-current={it.active ? "page" : undefined}
+              aria-current={it.path && it.path === current ? "page" : undefined}
               className="text-[15px] font-normal text-inherit transition-colors hover:text-zar"
             >
               {it.label}

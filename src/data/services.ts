@@ -110,62 +110,34 @@ export const showcase: Showcase[] = [
 export type InspoSlot = "tr" | "br" | "tl" | "bl";
 export type Inspo = { text: string; slot: InspoSlot; from: number; to: number };
 
-// Tekst u uglovima: rečenica je podijeljena na dvije smislene polovine. Prva ide desno (poravnata desno),
-// druga lijevo (poravnata lijevo), dijagonalno. Parovi se smjenjuju (A: gore desno + dolje lijevo,
-// B: dolje desno + gore lijevo) i preklapaju, pa je od druge slike nadalje stalno popunjen cijeli okvir.
-// Izvor: uvod stranice /usluge i landing studioblink.ba.
+// Tekst u uglovima: uvod stranice ("Gradimo sisteme koji idu u ruke stvarnih korisnika i ostaju jednostavni
+// za održavanje kada postanu ozbiljni. Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji
+// objašnjava sam sebe, i onda kada autor ode dalje.") razbijen na kratke rečenice, pa tek onda ostale rečenice.
+// Svaki par ima dvije polovine: prva ide desno (poravnata desno), druga lijevo (poravnata lijevo), dijagonalno.
+// Parovi se smjenjuju (A: gore desno + dolje lijevo, B: dolje desno + gore lijevo) i preklapaju, pa je stalno
+// popunjen cijeli okvir. Prvi par je vidljiv odmah pri učitavanju.
 const pairs: { right: string; left: string }[] = [
-  { right: "Gradimo sisteme koji idu u ruke stvarnih korisnika", left: "i ostaju jednostavni za održavanje kada postanu ozbiljni." },
-  { right: "Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji objašnjava sam sebe,", left: "i onda kada autor ode dalje." },
-  { right: "Jedan tim vodi proizvod", left: "od prve odluke do produkcije." },
+  { right: "Gradimo sisteme koji idu u ruke stvarnih korisnika.", left: "I ostaju jednostavni za održavanje kada postanu ozbiljni." },
+  { right: "Ista pažnja ide u rješavanje produkcijskog kvara,", left: "kao i u čist kôd koji objašnjava sam sebe." },
+  { right: "I onda kada autor ode dalje.", left: "Jedan tim vodi proizvod od prve odluke do produkcije." },
   { right: "Obim, rok i cijena stoje na papiru prije nego počne rad,", left: "a izvorni kod i pristupi ostaju vaši." },
   { right: "Tehnologiju biramo prema problemu,", left: "ne prema navici." },
   { right: "Radna verzija svake sedmice.", left: "Napredak gledate na testnom linku, ne na sastanku." },
   { right: "Ne biramo dio posla. Preuzimamo cijeli,", left: "strategiju, identitet, softver, AI i rast." },
   { right: "AI uvodimo tamo gdje stvarno skraćuje vrijeme", left: "i smanjuje greške, dok konačnu odluku zadržava čovjek." },
-  { right: "Rješenja koja izdrže opterećenje,", left: "i ostaju upotrebljiva godinama." },
   { right: "Ostajemo i poslije objave.", left: "Održavanje i dalji razvoj dogovaramo prije predaje." },
 ];
 
-// Par n počinje na slici n + 1, pa parova ima najviše koliko i slika bez prve. Višak se ne prikazuje
-// (inače bi se na zadnjoj slici preklopila dva para u istim uglovima).
-export const inspo: Inspo[] = pairs.slice(0, showcase.length - 1).flatMap((pair, n) => {
+// Par n traje dvije slike (n i n + 1). Parova ima koliko i slika, pa na zadnjoj slici nema preklapanja u istom uglu.
+export const inspo: Inspo[] = pairs.slice(0, showcase.length).flatMap((pair, n) => {
   const isA = n % 2 === 0;
-  const from = n + 1;
-  const to = n + 3;
+  const from = n;
+  const to = n + 2;
   return [
     { text: pair.right, slot: (isA ? "tr" : "br") as InspoSlot, from, to },
     { text: pair.left, slot: (isA ? "bl" : "tl") as InspoSlot, from, to },
   ];
 });
-
-export type Rad = { name: string; kind: string; slug: string; img: string; alt: string };
-
-// Radovi i proizvodi sa studioblink.ba (kartice, opisi i case stranice su sa landinga).
-const r = (name: string, kind: string, slug: string, img: string, alt: string): Rad => ({
-  name,
-  kind,
-  slug,
-  img: `/img/radovi/${img}.webp`,
-  alt,
-});
-export const radovi: Rad[] = [
-  r("Urbano", "Naš proizvod", "case-urbano", "urbano", "Urbano, mapa Banje Luke s prijavama građana"),
-  r("Golden Standard", "Identitet, sajt i B2B platforma", "case-golden-standard", "golden-standard", "Golden Standard, aktuelni prikaz sajta i barista mlijeka"),
-  r("Omaška", "Naš proizvod", "case-omaska", "omaska", "Omaška, sistem za klinike"),
-  r("U izlogu", "AI studio za artikle", "case-u-izlogu", "uizlogu", "U izlogu, studio za artikle"),
-  r("Longi", "Sajt prodavnice namještaja", "case-longi", "longi", "Longi, prikaz sajta prodavnice namještaja"),
-  r("Dr. Krnetić", "Demonstracija sajta", "case-krnetic", "krnetic", "Dr. Krnetić, demonstracija sajta"),
-  r("Lana Zrnić", "Identitet i sajt", "case-lana-zrnic", "lana", "Lana Zrnić, identitet i sajt"),
-  r("Smart AI Curator", "AI platforma", "case-smart-ai-curator", "curator", "Smart AI Curator, AI platforma"),
-  r("Pčelarstvo Jevtić", "Sajt i prodavnica", "case-pcelarstvo-jevtic", "pcelarstvo-jevtic", "Pčelarstvo Jevtić, sajt i prodavnica"),
-  r("jjovan.com", "Lični sajt", "case-jjovan", "jjovan", "jjovan.com, kadrovi poglavlja ličnog sajta"),
-  r("MT Ponos", "Prijedlog redizajna sajta", "case-mt-ponos", "mtponos", "MT Ponos, prijedlog redizajna sajta za podne obloge"),
-  r("Ihtis", "Sajt riblje kuhinje i ribarnice", "case-ihtis", "ihtis", "Ihtis, sajt riblje kuhinje i ribarnice"),
-  r("Drvex", "Sajt sa 3D kuhinjom", "case-drvex", "drvex", "Drvex, sajt sa 3D kuhinjom koja se sklapa"),
-  r("Lunara", "Koncept identiteta i sajta", "case-lunara", "lunara", "Lunara, koncept identiteta i sajta"),
-  r("Nova Forma", "Identitet i animirani sajt", "case-nova-forma", "nova-forma", "Nova Forma, identitet i animirani sajt"),
-];
 
 export const links = {
   radovi: "https://studioblink.ba/?lang=bs#radovi",
@@ -176,6 +148,7 @@ export const links = {
   email: "mailto:kontakt@studioblink.ba",
   jjovan: "https://jjovan.com",
 };
+
 
 
 

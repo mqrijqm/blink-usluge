@@ -25,7 +25,8 @@ const stateFor = (active: number, from: number, to: number): CornerState =>
 // Početak stranice: samo naslov, ispod njega stub radova (uvijek crno-bijelo).
 export default function Stack() {
   const root = useRef<HTMLElement>(null);
-  const [active, setActive] = useState(-1);
+  // Počinje na prvoj slici: prvi par rečenica u uglovima je vidljiv odmah pri učitavanju.
+  const [active, setActive] = useState(0);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);

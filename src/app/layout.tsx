@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import { Geist_Mono, Instrument_Sans, Manrope } from "next/font/google";
 import "./globals.css";
 
@@ -35,10 +35,11 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body>
         {/* Bez JavaScripta animacije nikad ne bi pokazale sadržaj, pa ga ovdje odmah otkrivamo. */}
         <noscript>
-          <style>{`.rv-title,.rv-item,.rv-strip,.rv-foot,.rv-card{opacity:1!important;transform:none!important}`}</style>
+          <style>{`.rv-title,.rv-item,.rv-strip,.rv-foot,.rv-card,.pz-end{opacity:1!important;transform:none!important}`}</style>
         </noscript>
         {children}
       </body>
     </html>
   );
 }
+
