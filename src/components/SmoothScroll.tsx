@@ -21,7 +21,14 @@ export default function SmoothScroll() {
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
+    // Fontovi i slike mijenjaju visinu stranice kad se učitaju: ponovo izmjeri sve okidače skrola,
+    // inače se animacije pale na pogrešnom mjestu ("zaglibe" ili skoče).
+    const refresh = () => ScrollTrigger.refresh();
+    document.fonts?.ready.then(refresh);
+    window.addEventListener("load", refresh);
+
     return () => {
+      window.removeEventListener("load", refresh);
       gsap.ticker.remove(tick);
       lenis.destroy();
     };

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
@@ -18,14 +18,19 @@ export default function Closer() {
 
     const mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.from(q(".r"), {
-        y: 20,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out",
-        stagger: 0.1,
-        scrollTrigger: { trigger: el, start: "top 75%", toggleActions: "play none none reverse" },
-      });
+      // Početno stanje je u CSS-u (.rv-foot), pa nema bljeska prije animacije.
+      gsap.fromTo(
+        q(".rv-foot"),
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1.1,
+          ease: "power3.out",
+          stagger: 0.12,
+          scrollTrigger: { trigger: el, start: "top 75%", toggleActions: "play none none reverse" },
+        },
+      );
     });
     return () => mm.revert();
   }, []);
@@ -35,12 +40,12 @@ export default function Closer() {
       <div className="pod-u">
         <div className="pod-g">
           <div>
-            <p className="pod-oz r">Kontakt</p>
-            <h2 className="pod-h r">Preuzimamo od ideje do rasta.</h2>
-            <p className="pod-vod r">
+            <p className="pod-oz rv-foot">Kontakt</p>
+            <h2 className="pod-h rv-foot">Preuzimamo od ideje do rasta.</h2>
+            <p className="pod-vod rv-foot">
               Recite nam šta želite promijeniti. Razgovarajmo o cilju, prioritetima i sljedećem koraku.
             </p>
-            <div className="r">
+            <div className="rv-foot">
               <a className="pod-dug" href={`${site}/kontakt?lang=bs`}>
                 Zakažite razgovor{" "}
                 <svg viewBox="0 0 16 16" aria-hidden="true">
@@ -86,3 +91,4 @@ export default function Closer() {
     </footer>
   );
 }
+

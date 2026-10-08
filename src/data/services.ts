@@ -84,43 +84,59 @@ export const services: Service[] = [
 ];
 
 export type Showcase = {
-  src: string;
+  /** crno-bijela (nizak kontrast) verzija, zadano stanje */
+  bw: string;
+  /** originalne boje, pojavljuje se na hover */
+  color: string;
   shape: "portrait" | "landscape";
+  alt: string;
 };
 
-// Apstraktne AI slike za stub u sredini stranice.
+// Radovi u stubu: naizmjenično vertikalne (4:5) i horizontalne (1916:821), svi iste veličine unutar svog tipa.
+const w = (name: string) => ({ bw: `/img/work/${name}-bw.webp`, color: `/img/work/${name}-color.webp` });
 export const showcase: Showcase[] = [
-  { src: "/img/ai/stack-1.webp", shape: "portrait" },
-  { src: "/img/ai/stack-2.webp", shape: "landscape" },
-  { src: "/img/ai/stack-3.webp", shape: "portrait" },
-  { src: "/img/ai/stack-4.webp", shape: "landscape" },
-  { src: "/img/ai/stack-5.webp", shape: "portrait" },
-  { src: "/img/ai/stack-6.webp", shape: "landscape" },
+  { ...w("v1-urbano"), shape: "portrait", alt: "Urbano aplikacija na telefonu u ruci, u gradu" },
+  { ...w("h1-lana"), shape: "landscape", alt: "Lana Zrnić, portfolio skulptorke, galerija fotografija" },
+  { ...w("v2-sto"), shape: "portrait", alt: "Mramorni sto Calacatta sa karticom proizvoda" },
+  { ...w("h2-gs"), shape: "landscape", alt: "Golden Standard, tri kartice sistema: mašina, mikropjena, higijena" },
+  { ...w("v3-arky-app"), shape: "portrait", alt: "Arky aplikacija, mreža sa narandžastim pikselima" },
+  { ...w("h3-kafa"), shape: "landscape", alt: "Golden Standard, makro zrna kafe" },
+  { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž" },
+  { ...w("h4-nova-forma"), shape: "landscape", alt: "Nova Forma, atelje za svjetlo, naslovna stranica" },
+  { ...w("v5-decade"), shape: "portrait", alt: "Tipografski poster: šta jedna decenija rada postane" },
+  { ...w("h5-orbita"), shape: "landscape", alt: "Nova Forma Orbita, svjetiljka od opala na plavom zidu" },
+  { ...w("v6-arky-slojevi"), shape: "portrait", alt: "Arky arhitektura u tri sloja, izometrijski prikaz" },
 ];
 
-// Inspo tekst u uglovima stuba. Svaka rečenica je podijeljena na dvije smislene polovine:
-// prva ide desno (poravnata desno), druga lijevo (poravnata lijevo), na dijagonalnim uglovima.
-// Tekst je vidljiv dok je fokus na slici između `from` (uključeno) i `to` (isključeno), pa se smjenjuju.
-// Izvor: uvod stranice /usluge i landing studioblink.ba.
 export type InspoSlot = "tr" | "br" | "tl" | "bl";
-export const inspo: { text: string; slot: InspoSlot; from: number; to: number }[] = [
-  // 1. Gradimo sisteme... (desno gore / lijevo dolje)
-  { text: "Gradimo sisteme koji idu u ruke stvarnih korisnika", slot: "tr", from: 1, to: 3 },
-  { text: "i ostaju jednostavni za održavanje kada postanu ozbiljni.", slot: "bl", from: 1, to: 3 },
-  // 2. Ista pažnja... (desno dolje / lijevo gore)
-  { text: "Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji objašnjava sam sebe,", slot: "br", from: 2, to: 4 },
-  { text: "i onda kada autor ode dalje.", slot: "tl", from: 2, to: 4 },
-  // 3. Jedan tim...
-  { text: "Jedan tim vodi proizvod", slot: "tr", from: 3, to: 5 },
-  { text: "od prve odluke do produkcije.", slot: "bl", from: 3, to: 5 },
-  // 4. Obim, rok i cijena...
-  { text: "Obim, rok i cijena stoje na papiru prije nego počne rad,", slot: "br", from: 4, to: 7 },
-  { text: "a izvorni kod i pristupi ostaju vaši.", slot: "tl", from: 4, to: 7 },
-  // 5. Tehnologiju biramo...
-  { text: "Tehnologiju biramo prema problemu,", slot: "tr", from: 5, to: 7 },
-  { text: "ne prema navici.", slot: "bl", from: 5, to: 7 },
+export type Inspo = { text: string; slot: InspoSlot; from: number; to: number };
+
+// Tekst u uglovima: rečenica je podijeljena na dvije smislene polovine. Prva ide desno (poravnata desno),
+// druga lijevo (poravnata lijevo), dijagonalno. Parovi se smjenjuju (A: gore desno + dolje lijevo,
+// B: dolje desno + gore lijevo) i preklapaju, pa je od druge slike nadalje stalno popunjen cijeli okvir.
+// Izvor: uvod stranice /usluge i landing studioblink.ba.
+const pairs: { right: string; left: string }[] = [
+  { right: "Gradimo sisteme koji idu u ruke stvarnih korisnika", left: "i ostaju jednostavni za održavanje kada postanu ozbiljni." },
+  { right: "Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji objašnjava sam sebe,", left: "i onda kada autor ode dalje." },
+  { right: "Jedan tim vodi proizvod", left: "od prve odluke do produkcije." },
+  { right: "Obim, rok i cijena stoje na papiru prije nego počne rad,", left: "a izvorni kod i pristupi ostaju vaši." },
+  { right: "Tehnologiju biramo prema problemu,", left: "ne prema navici." },
+  { right: "Radna verzija svake sedmice.", left: "Napredak gledate na testnom linku, ne na sastanku." },
+  { right: "Ne biramo dio posla. Preuzimamo cijeli,", left: "strategiju, identitet, softver, AI i rast." },
+  { right: "AI uvodimo tamo gdje stvarno skraćuje vrijeme", left: "i smanjuje greške, dok konačnu odluku zadržava čovjek." },
+  { right: "Rješenja koja izdrže opterećenje,", left: "i ostaju upotrebljiva godinama." },
+  { right: "Ostajemo i poslije objave.", left: "Održavanje i dalji razvoj dogovaramo prije predaje." },
 ];
 
+export const inspo: Inspo[] = pairs.flatMap((pair, n) => {
+  const isA = n % 2 === 0;
+  const from = n + 1;
+  const to = n + 3;
+  return [
+    { text: pair.right, slot: (isA ? "tr" : "br") as InspoSlot, from, to },
+    { text: pair.left, slot: (isA ? "bl" : "tl") as InspoSlot, from, to },
+  ];
+});
 export const links = {
   radovi: "https://studioblink.ba/?lang=bs#radovi",
   usluge: "https://studioblink.ba/usluge?lang=bs",
@@ -130,6 +146,7 @@ export const links = {
   email: "mailto:kontakt@studioblink.ba",
   jjovan: "https://jjovan.com",
 };
+
 
 
 

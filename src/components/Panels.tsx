@@ -1,10 +1,14 @@
-"use client";
+﻿"use client";
 
-import { useEffect, useRef } from "react";
+import { Fragment, useEffect, useRef } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { services } from "@/data/services";
+import { blurs } from "@/data/blur";
+
+// Koliko dugo ostaje potpuno vidljiv jedan panel prije nego sljedeći krene da ga prekriva (u visinama ekrana).
+const HOLD = "80svh";
 
 export default function Panels() {
   const root = useRef<HTMLElement>(null);
@@ -26,6 +30,7 @@ export default function Panels() {
         if (ctx.conditions?.calm) return;
         const side = ctx.conditions?.desktop ? 8 : 5;
         const panels = q<HTMLElement>(".panel");
+        const anchors = q<HTMLElement>(".panel-anchor");
 
         panels.forEach((panel, i) => {
           const media = panel.querySelector<HTMLElement>(".panel-media");
@@ -41,7 +46,7 @@ export default function Panels() {
             {
               clipPath: "inset(0% 0% 0% 0%)",
               ease: "none",
-              scrollTrigger: { trigger: panel, start: "top bottom", end: "top top", scrub: true },
+              scrollTrigger: { trigger: anchors[i], start: "top bottom", end: "top top", scrub: true },
             },
           );
           // Slika se smiruje dok panel stiže na mjesto.
@@ -51,24 +56,28 @@ export default function Panels() {
             {
               scale: 1,
               ease: "none",
-              scrollTrigger: { trigger: panel, start: "top bottom", end: "top top", scrub: true },
+              scrollTrigger: { trigger: anchors[i], start: "top bottom", end: "top top", scrub: true },
             },
           );
           // Traka sa tekstom izlazi kad panel zauzme ekran.
-          gsap.from(strip, {
-            y: 46,
-            opacity: 0,
-            duration: 0.9,
-            ease: "power3.out",
-            scrollTrigger: { trigger: panel, start: "top 45%", toggleActions: "play none none reverse" },
-          });
+          gsap.fromTo(
+            strip,
+            { y: 46, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.1,
+              ease: "power3.out",
+              scrollTrigger: { trigger: anchors[i], start: "top 40%", toggleActions: "play none none reverse" },
+            },
+          );
           // Prethodni panel tamni kad ga sljedeći pokriva.
           const next = panels[i + 1];
           if (next && shade) {
             gsap.to(shade, {
               opacity: 0.42,
               ease: "none",
-              scrollTrigger: { trigger: next, start: "top bottom", end: "top top", scrub: true },
+              scrollTrigger: { trigger: anchors[i + 1], start: "top bottom", end: "top top", scrub: true },
             });
           }
         });
@@ -80,18 +89,25 @@ export default function Panels() {
 
   return (
     <section ref={root} id="usluge" aria-label="Usluge" className="relative bg-bg">
-      {services.map((s) => (
+      {services.map((s, i) => (
+        <Fragment key={s.n}>
+          {/* Razmak prije svakog panela = vrijeme koje prethodni panel ostaje potpuno vidljiv */}
+          {i > 0 && <div aria-hidden="true" style={{ height: HOLD }} />}
+          {/* Nelijepljena oznaka: ScrollTrigger mjeri nju (sticky element mijenja poziciju dok je zalijepljen) */}
+          <div className="panel-anchor h-0" aria-hidden="true" />
         <article
-          key={s.n}
           className="panel sticky top-0 h-[100svh] w-full overflow-hidden"
         >
-          <div className="panel-media absolute inset-0">
-            <div className="panel-img absolute inset-0">
+          <div className="panel-media absolute inset-0 will-change-[clip-path]">
+            <div className="panel-img absolute inset-0 will-change-transform">
               <Image
                 src={s.image}
                 alt={s.alt}
                 fill
                 sizes="100vw"
+                loading="eager"
+                placeholder={blurs[s.image] ? "blur" : "empty"}
+                blurDataURL={blurs[s.image]}
                 className="object-cover object-top"
               />
             </div>
@@ -99,7 +115,7 @@ export default function Panels() {
           </div>
 
           {/* Svijetla traka: broj + tekst lijevo, kategorija + naslov desno (kao na ref sajtu) */}
-          <div className="panel-strip absolute inset-x-4 bottom-4 rounded-[2px] bg-[#f4f1ec]/90 p-6 backdrop-blur-md md:inset-x-10 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:px-10 md:py-9">
+          <div className="panel-strip rv-strip absolute inset-x-4 bottom-4 rounded-[2px] bg-[#f4f1ec]/90 p-6 backdrop-blur-md md:inset-x-10 md:bottom-auto md:top-1/2 md:-translate-y-1/2 md:px-10 md:py-9">
             <div className="grid gap-5 md:grid-cols-[minmax(0,1fr)_minmax(0,1fr)_minmax(0,1.3fr)] md:gap-10">
               <div className="order-2 md:order-none">
                 <div className="label mb-4 text-ink/50 max-md:hidden">{s.n}</div>
@@ -143,7 +159,9 @@ export default function Panels() {
             </div>
           </div>
         </article>
+        </Fragment>
       ))}
     </section>
   );
 }
+

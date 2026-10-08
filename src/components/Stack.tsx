@@ -4,24 +4,28 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import CornerText, { type CornerState } from "./CornerText";
 import { EclipseColumn } from "./Eclipse";
 import { inspo, showcase, type InspoSlot } from "@/data/services";
+import { blurs } from "@/data/blur";
 
 // Krugovi prve sekcije: dovoljno mali da se vide kao cijeli krugovi (izvan komponente = stalna identičnost liste).
 const RING_SIZES = [640, 400, 800, 520];
 
 const slotClass: Record<InspoSlot, string> = {
-  tr: "right-14 top-[110px] text-right",
-  br: "bottom-12 right-14 text-right",
-  tl: "left-14 top-[110px] text-left",
-  bl: "bottom-12 left-14 text-left",
+  tr: "right-14 top-[116px] text-right",
+  br: "bottom-14 right-14 text-right",
+  tl: "left-14 top-[116px] text-left",
+  bl: "bottom-14 left-14 text-left",
 };
 
-// Početak stranice: samo naslov, odmah ispod njega stub slika. Isti bijeli background,
-// jedna kolona krugova ispod svega.
+const stateFor = (active: number, from: number, to: number): CornerState =>
+  active < from ? "before" : active >= to ? "after" : "on";
+
+// Početak stranice: samo naslov, ispod njega stub radova (crno-bijelo, boja na hover).
 export default function Stack() {
   const root = useRef<HTMLElement>(null);
-  const [active, setActive] = useState(0);
+  const [active, setActive] = useState(-1);
 
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
@@ -36,12 +40,17 @@ export default function Stack() {
         const calm = !!ctx.conditions?.calm;
 
         if (!calm) {
-          // Naslov izlazi iz maske.
-          gsap.from(q(".hero-line"), { yPercent: 115, duration: 1.1, ease: "power3.out", stagger: 0.12 });
+          // Naslov izlazi iz maske (početno stanje je u CSS-u, .rv-title).
+          gsap.fromTo(
+            q(".hero-line"),
+            // y: 0 je obavezno: GSAP inače pročita CSS pomak (translateY 115%) kao piksele i naslov ostane sakriven.
+            { yPercent: 115, y: 0 },
+            { yPercent: 0, y: 0, duration: 1.2, ease: "power3.out", stagger: 0.12, delay: 0.1 },
+          );
         }
 
         q<HTMLElement>(".stack-item").forEach((item, i) => {
-          // Koja slika je u fokusu: od toga zavisi koji se inspo tekst sa desne strane pojavljuje.
+          // Koja slika je u fokusu: od toga zavisi koji se tekst u uglovima pojavljuje.
           ScrollTrigger.create({
             trigger: item,
             start: "top 62%",
@@ -51,14 +60,18 @@ export default function Stack() {
 
           if (calm) return;
 
-          // Ulaz odozdo, kao slike na ref sajtu.
-          gsap.from(item, {
-            y: 90,
-            opacity: 0,
-            duration: 1.1,
-            ease: "power3.out",
-            scrollTrigger: { trigger: item, start: "top 94%", toggleActions: "play none none reverse" },
-          });
+          // Ulaz odozdo (početno stanje je u CSS-u, .rv-item).
+          gsap.fromTo(
+            item,
+            { y: 90, opacity: 0 },
+            {
+              y: 0,
+              opacity: 1,
+              duration: 1.3,
+              ease: "power3.out",
+              scrollTrigger: { trigger: item, start: "top 94%", toggleActions: "play none none reverse" },
+            },
+          );
           // Blagi paralaks unutar okvira.
           gsap.fromTo(
             item.querySelector(".stack-img"),
@@ -81,54 +94,64 @@ export default function Stack() {
       {/* Krugovi: velika kolona po sredini, linije bez ispune, ispod svega */}
       <EclipseColumn sizes={RING_SIZES} spacing={0.5} />
 
-      {/* Fiksni inspo tekst u 4 ugla: pojavljuje se naknadno i smjenjuje se kako skroluješ.
-          Prva polovina rečenice ide desno, druga lijevo (poravnata lijevo). */}
-      <div className="pointer-events-none sticky top-0 z-0 -mb-[100svh] hidden h-[100svh] md:block">
+      {/* Fiksni tekst u 4 ugla: dijagonalno, naknadno se pojavljuje i smjenjuje kako skroluješ */}
+      <div className="pointer-events-none sticky top-0 z-0 -mb-[100svh] hidden h-[100svh] xl:block">
         {inspo.map((t) => (
-          <p
+          <CornerText
             key={t.text}
-            className={`label absolute w-[210px] text-[10px] leading-[1.7] text-ink transition-[opacity,translate] duration-700 ease-out motion-reduce:transition-none ${slotClass[t.slot]} ${
-              active >= t.from && active < t.to ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
-            }`}
-          >
-            {t.text}
-          </p>
+            text={t.text}
+            state={stateFor(active, t.from, t.to)}
+            className={`absolute w-[min(22vw,320px)] text-ink ${slotClass[t.slot]}`}
+          />
         ))}
       </div>
 
       {/* Naslov */}
-      <div className="relative z-[1] px-5 pb-14 pt-[26svh] text-center">
+      <div className="relative z-[1] px-5 pb-[14svh] pt-[26svh] text-center">
         <h1 className="font-display text-[clamp(52px,8vw,120px)] font-normal leading-[0.94] tracking-[-0.025em]">
           <span className="block overflow-hidden pb-[0.06em]">
-            <span className="hero-line block">Blink usluge</span>
+            <span className="hero-line rv-title block">Blink usluge</span>
           </span>
           <span className="block overflow-hidden pb-[0.1em]">
-            <em className="hero-line block text-[0.42em] font-normal not-italic leading-[1.1] tracking-[-0.015em] text-zar">
+            <em className="hero-line rv-title block text-[0.42em] font-normal not-italic leading-[1.1] tracking-[-0.015em] text-zar">
               produkcijski softver, ne demo
             </em>
           </span>
         </h1>
       </div>
 
-      {/* Stub slika u sredini: svi uski iste veličine, svi široki iste veličine, oštre ivice */}
-      <div className="relative flex flex-col items-center gap-10 pb-[16svh]">
-        {showcase.map((s) => (
-          <figure key={s.src} className="stack-item relative z-[1] flex w-full justify-center">
+      {/* Stub radova: vertikalne svi isti, horizontalne svi isti, oštre ivice, puno bijelog prostora između */}
+      <div className="relative flex flex-col items-center gap-[clamp(120px,26svh,280px)] pb-[26svh]">
+        {showcase.map((s, i) => (
+          <figure key={s.bw} className="stack-item rv-item relative z-[1] flex w-full justify-center">
             <div
-              className={`relative overflow-hidden ${
+              className={`group relative overflow-hidden ${
                 s.shape === "portrait"
-                  ? "aspect-[2/3] w-[min(60vw,260px)]"
-                  : "aspect-[3/2] w-[min(78vw,390px)]"
+                  ? "aspect-[4/5] w-[min(62vw,320px)]"
+                  : "aspect-[1916/821] w-[min(88vw,600px)]"
               }`}
             >
               <div className="stack-img absolute -inset-y-[7%] inset-x-0">
+                {/* Zadano: crno-bijelo, nizak kontrast */}
                 <Image
-                  src={s.src}
-                  alt=""
+                  src={s.bw}
+                  alt={s.alt}
                   fill
-                  priority={s.src.endsWith("stack-1.webp")}
-                  sizes={s.shape === "portrait" ? "260px" : "390px"}
+                  loading="eager"
+                  placeholder={blurs[s.bw] ? "blur" : "empty"}
+                  blurDataURL={blurs[s.bw]}
+                  sizes={s.shape === "portrait" ? "320px" : "600px"}
                   className="object-cover"
+                />
+                {/* Na hover: originalne boje (na dodir: slika u fokusu) */}
+                <Image
+                  src={s.color}
+                  alt=""
+                  aria-hidden="true"
+                  fill
+                  sizes={s.shape === "portrait" ? "320px" : "600px"}
+                  data-focus={active === i}
+                  className="object-cover opacity-0 transition-opacity duration-700 ease-out motion-reduce:transition-none [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:none)]:data-[focus=true]:opacity-100"
                 />
               </div>
             </div>

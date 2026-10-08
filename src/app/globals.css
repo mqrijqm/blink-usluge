@@ -61,6 +61,64 @@ body {
   text-transform: uppercase;
 }
 
+/* ---------- Početna stanja animacija ----------
+   Namjerno u CSS-u (ne u JS-u): element je skriven već u prvom frejmu, pa nema "bljeska"
+   sadržaja koji skoči prije nego GSAP preuzme. Vrijednosti moraju biti iste kao "from" u komponentama. */
+@media (prefers-reduced-motion: no-preference) {
+  .rv-title {
+    transform: translateY(115%);
+  }
+  .rv-item {
+    opacity: 0;
+    transform: translateY(90px);
+  }
+  .rv-strip {
+    opacity: 0;
+    transform: translateY(46px);
+  }
+  .rv-foot {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+}
+
+/* ---------- Tekst u uglovima: riječ po riječ izlazi iz maske ---------- */
+.ct {
+  --ease: cubic-bezier(0.16, 1, 0.3, 1);
+  font-size: 13px;
+  line-height: 1.7;
+  letter-spacing: 0.08em;
+}
+.ct .ct-w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.2em;
+  margin-bottom: -0.2em;
+}
+.ct .ct-w > span {
+  display: inline-block;
+  transform: translateY(115%);
+  transition: transform 1.1s var(--ease) calc(var(--i) * 45ms);
+  will-change: transform;
+}
+.ct[data-state="on"] .ct-w > span {
+  transform: translateY(0);
+  transition-delay: calc(350ms + var(--i) * 45ms); /* ulazi tek kad prethodni tekst počne odlaziti */
+}
+.ct[data-state="after"] .ct-w > span {
+  transform: translateY(-115%);
+  transition-duration: 0.8s;
+  transition-delay: calc(var(--i) * 22ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .ct .ct-w > span,
+  .ct[data-state="on"] .ct-w > span,
+  .ct[data-state="after"] .ct-w > span {
+    transition: none;
+  }
+}
+
 /* ---------- Eclipse: samo linija kruga, bez ispune ---------- */
 .eclipse-ring {
   position: absolute;

@@ -32,7 +32,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="bs"
       className={`${manrope.variable} ${instrument.variable} ${geistMono.variable} antialiased`}
     >
-      <body>{children}</body>
+      <body>
+        {/* Bez JavaScripta animacije nikad ne bi pokazale sadržaj, pa ga ovdje odmah otkrivamo. */}
+        <noscript>
+          <style>{`.rv-title,.rv-item,.rv-strip,.rv-foot{opacity:1!important;transform:none!important}`}</style>
+        </noscript>
+        {children}
+      </body>
     </html>
   );
 }

@@ -38,8 +38,13 @@ export function EclipseColumn({
   useLayoutEffect(() => {
     const el = box.current;
     if (!el) return;
+    let lastH = -1;
     const build = () => {
       const h = el.clientHeight;
+      // Visina se često "treperi" za par piksela (fontovi, slike): ponovo crtaj samo kad se bitno promijeni,
+      // inače se svi krugovi iznova animiraju.
+      if (Math.abs(h - lastH) < 40) return;
+      lastH = h;
       const out: Ring[] = [];
       let i = 0;
       let d = sizes[0];
