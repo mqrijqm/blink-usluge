@@ -21,13 +21,14 @@ type Props = {
 };
 
 // Izvan komponente, da lista ima stalnu identičnost (nova lista pri svakom renderu = beskonačna petlja).
-const DEFAULT_SIZES = [300, 190, 380, 240];
+// 10× veći od prve verzije (300/190/380/240 px): krugovi su sad ogromni lukovi koji prelaze cijeli ekran.
+const DEFAULT_SIZES = [3000, 1900, 3800, 2400];
 
 export function EclipseColumn({
   dark = false,
   className = "",
   sizes = DEFAULT_SIZES,
-  spacing = 0.62,
+  spacing = 0.3,
   reveal = "scroll",
 }: Props) {
   const box = useRef<HTMLDivElement>(null);

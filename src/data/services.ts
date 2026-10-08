@@ -90,18 +90,27 @@ export const showcase: Showcase[] = [
   { src: "/img/ai/stack-6.webp", shape: "landscape" },
 ];
 
-// Inspo tekst sa desne strane stuba: rečenice iz uvoda stranice. Pojavljuju se kad slika `from` uđe u fokus.
-export const inspo: { text: string; pos: "top" | "bottom"; from: number }[] = [
-  {
-    text: "Gradimo sisteme koji idu u ruke stvarnih korisnika i ostaju jednostavni za održavanje kada postanu ozbiljni.",
-    pos: "top",
-    from: 1,
-  },
-  {
-    text: "Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji objašnjava sam sebe, i onda kada autor ode dalje.",
-    pos: "bottom",
-    from: 3,
-  },
+// Inspo tekst u uglovima stuba. Svaka rečenica je podijeljena na dvije smislene polovine:
+// prva ide desno (poravnata desno), druga lijevo (poravnata lijevo), na dijagonalnim uglovima.
+// Tekst je vidljiv dok je fokus na slici između `from` (uključeno) i `to` (isključeno), pa se smjenjuju.
+// Izvor: uvod stranice /usluge i landing studioblink.ba.
+export type InspoSlot = "tr" | "br" | "tl" | "bl";
+export const inspo: { text: string; slot: InspoSlot; from: number; to: number }[] = [
+  // 1. Gradimo sisteme... (desno gore / lijevo dolje)
+  { text: "Gradimo sisteme koji idu u ruke stvarnih korisnika", slot: "tr", from: 1, to: 3 },
+  { text: "i ostaju jednostavni za održavanje kada postanu ozbiljni.", slot: "bl", from: 1, to: 3 },
+  // 2. Ista pažnja... (desno dolje / lijevo gore)
+  { text: "Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji objašnjava sam sebe,", slot: "br", from: 2, to: 4 },
+  { text: "i onda kada autor ode dalje.", slot: "tl", from: 2, to: 4 },
+  // 3. Jedan tim...
+  { text: "Jedan tim vodi proizvod", slot: "tr", from: 3, to: 5 },
+  { text: "od prve odluke do produkcije.", slot: "bl", from: 3, to: 5 },
+  // 4. Obim, rok i cijena...
+  { text: "Obim, rok i cijena stoje na papiru prije nego počne rad,", slot: "br", from: 4, to: 7 },
+  { text: "a izvorni kod i pristupi ostaju vaši.", slot: "tl", from: 4, to: 7 },
+  // 5. Tehnologiju biramo...
+  { text: "Tehnologiju biramo prema problemu,", slot: "tr", from: 5, to: 7 },
+  { text: "ne prema navici.", slot: "bl", from: 5, to: 7 },
 ];
 
 export const links = {

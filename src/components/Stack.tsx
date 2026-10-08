@@ -5,7 +5,14 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EclipseColumn } from "./Eclipse";
-import { inspo, showcase } from "@/data/services";
+import { inspo, showcase, type InspoSlot } from "@/data/services";
+
+const slotClass: Record<InspoSlot, string> = {
+  tr: "right-14 top-[110px] text-right",
+  br: "bottom-12 right-14 text-right",
+  tl: "left-14 top-[110px] text-left",
+  bl: "bottom-12 left-14 text-left",
+};
 
 // Početak stranice: samo naslov, odmah ispod njega stub slika. Isti bijeli background,
 // jedna kolona krugova ispod svega.
@@ -71,15 +78,15 @@ export default function Stack() {
       {/* Krugovi: velika kolona po sredini, linije bez ispune, ispod svega */}
       <EclipseColumn />
 
-      {/* Fiksni inspo tekst sa desne strane, pojavljuje se naknadno kako skroluješ */}
+      {/* Fiksni inspo tekst u 4 ugla: pojavljuje se naknadno i smjenjuje se kako skroluješ.
+          Prva polovina rečenice ide desno, druga lijevo (poravnata lijevo). */}
       <div className="pointer-events-none sticky top-0 z-0 -mb-[100svh] hidden h-[100svh] md:block">
-        {inspo.map((t, i) => (
+        {inspo.map((t) => (
           <p
             key={t.text}
-            className={`label absolute right-14 w-[210px] text-right text-[10px] leading-[1.7] text-ink transition-[opacity,translate] duration-700 ease-out motion-reduce:transition-none ${t.pos === "top" ? "top-[110px]" : "bottom-12"} ${
-              active >= t.from ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            className={`label absolute w-[210px] text-[10px] leading-[1.7] text-ink transition-[opacity,translate] duration-700 ease-out motion-reduce:transition-none ${slotClass[t.slot]} ${
+              active >= t.from && active < t.to ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
             }`}
-            data-i={i}
           >
             {t.text}
           </p>
