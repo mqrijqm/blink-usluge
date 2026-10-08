@@ -5,8 +5,10 @@ import Image from "next/image";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EclipseColumn } from "./Eclipse";
-import { showcase, stackItems } from "@/data/services";
+import { inspo, showcase } from "@/data/services";
 
+// Početak stranice: samo naslov, odmah ispod njega stub slika. Isti bijeli background,
+// jedna kolona krugova ispod svega.
 export default function Stack() {
   const root = useRef<HTMLElement>(null);
   const [active, setActive] = useState(0);
@@ -23,8 +25,13 @@ export default function Stack() {
       (ctx) => {
         const calm = !!ctx.conditions?.calm;
 
+        if (!calm) {
+          // Naslov izlazi iz maske.
+          gsap.from(q(".hero-line"), { yPercent: 115, duration: 1.1, ease: "power3.out", stagger: 0.12 });
+        }
+
         q<HTMLElement>(".stack-item").forEach((item, i) => {
-          // Koja slika je u fokusu: mijenja brojač u donjem lijevom uglu.
+          // Koja slika je u fokusu: od toga zavisi koji se inspo tekst sa desne strane pojavljuje.
           ScrollTrigger.create({
             trigger: item,
             start: "top 62%",
@@ -36,18 +43,18 @@ export default function Stack() {
 
           // Ulaz odozdo, kao slike na ref sajtu.
           gsap.from(item, {
-            y: 110,
+            y: 90,
             opacity: 0,
             duration: 1.1,
             ease: "power3.out",
-            scrollTrigger: { trigger: item, start: "top 92%", toggleActions: "play none none reverse" },
+            scrollTrigger: { trigger: item, start: "top 94%", toggleActions: "play none none reverse" },
           });
           // Blagi paralaks unutar okvira.
           gsap.fromTo(
             item.querySelector(".stack-img"),
-            { yPercent: -7 },
+            { yPercent: -6 },
             {
-              yPercent: 7,
+              yPercent: 6,
               ease: "none",
               scrollTrigger: { trigger: item, start: "top bottom", end: "bottom top", scrub: true },
             },
@@ -59,48 +66,58 @@ export default function Stack() {
     return () => mm.revert();
   }, []);
 
-  const half = Math.ceil(stackItems.length / 2);
-
   return (
-    <section ref={root} id="stack" className="relative overflow-clip bg-warm">
-      {/* Krugovi: kolona po sredini, ispod slika */}
-      <EclipseColumn sizes={[200, 128, 256, 160, 224, 112]} />
+    <section ref={root} id="stack" className="relative overflow-clip bg-bg">
+      {/* Krugovi: velika kolona po sredini, linije bez ispune, ispod svega */}
+      <EclipseColumn />
 
-      {/* Fiksni mono uglovi (ostaju na mjestu dok slike prolaze) */}
-      <div className="pointer-events-none sticky top-0 z-0 -mb-[100svh] h-[100svh]">
-        <div className="label absolute left-5 top-[104px] text-zar md:left-14">[ Stack ]</div>
-        <ul className="label absolute right-5 top-[104px] hidden text-right text-ink/70 md:right-14 md:block">
-          {stackItems.slice(0, half).map((t) => (
-            <li key={t}>{t}</li>
-          ))}
-        </ul>
-        <ul className="label absolute bottom-12 right-5 hidden text-right text-ink/70 md:right-14 md:block">
-          {stackItems.slice(half).map((t) => (
-            <li key={t}>{t}</li>
-          ))}
-        </ul>
-        <div className="label absolute bottom-6 left-5 text-ink/60 md:bottom-12 md:left-14" aria-live="polite">
-          {String(active + 1).padStart(2, "0")} / {String(showcase.length).padStart(2, "0")}
-        </div>
+      {/* Fiksni inspo tekst sa desne strane, pojavljuje se naknadno kako skroluješ */}
+      <div className="pointer-events-none sticky top-0 z-0 -mb-[100svh] hidden h-[100svh] md:block">
+        {inspo.map((t, i) => (
+          <p
+            key={t.text}
+            className={`label absolute right-14 w-[210px] text-right text-[10px] leading-[1.7] text-ink transition-[opacity,translate] duration-700 ease-out motion-reduce:transition-none ${t.pos === "top" ? "top-[110px]" : "bottom-12"} ${
+              active >= t.from ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
+            }`}
+            data-i={i}
+          >
+            {t.text}
+          </p>
+        ))}
       </div>
 
-      {/* Stub slika u sredini */}
-      <div className="relative flex flex-col items-center gap-10 pb-[16svh] pt-[22svh]">
+      {/* Naslov */}
+      <div className="relative z-[1] px-5 pb-14 pt-[26svh] text-center">
+        <h1 className="font-display text-[clamp(52px,8vw,120px)] font-normal leading-[0.94] tracking-[-0.025em]">
+          <span className="block overflow-hidden pb-[0.06em]">
+            <span className="hero-line block">Blink usluge</span>
+          </span>
+          <span className="block overflow-hidden pb-[0.1em]">
+            <em className="hero-line block text-[0.42em] font-normal not-italic leading-[1.1] tracking-[-0.015em] text-zar">
+              produkcijski softver, ne demo
+            </em>
+          </span>
+        </h1>
+      </div>
+
+      {/* Stub slika u sredini: svi uski iste veličine, svi široki iste veličine, oštre ivice */}
+      <div className="relative flex flex-col items-center gap-10 pb-[16svh]">
         {showcase.map((s) => (
           <figure key={s.src} className="stack-item relative z-[1] flex w-full justify-center">
             <div
-              className={`relative overflow-hidden rounded-[10px] shadow-[0_30px_70px_-34px_rgba(43,35,26,0.55)] ${
+              className={`relative overflow-hidden ${
                 s.shape === "portrait"
-                  ? "aspect-[3/4] w-[min(64vw,347px)]"
-                  : "aspect-[4/3] w-[min(82vw,460px)]"
+                  ? "aspect-[2/3] w-[min(60vw,260px)]"
+                  : "aspect-[3/2] w-[min(78vw,390px)]"
               }`}
             >
-              <div className="stack-img absolute -inset-y-[8%] inset-x-0">
+              <div className="stack-img absolute -inset-y-[7%] inset-x-0">
                 <Image
                   src={s.src}
                   alt=""
                   fill
-                  sizes="(min-width: 768px) 460px, 82vw"
+                  priority={s.src.endsWith("stack-1.webp")}
+                  sizes={s.shape === "portrait" ? "260px" : "390px"}
                   className="object-cover"
                 />
               </div>

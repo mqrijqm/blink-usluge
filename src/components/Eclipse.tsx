@@ -20,10 +20,13 @@ type Props = {
   reveal?: "load" | "scroll";
 };
 
+// Izvan komponente, da lista ima stalnu identičnost (nova lista pri svakom renderu = beskonačna petlja).
+const DEFAULT_SIZES = [300, 190, 380, 240];
+
 export function EclipseColumn({
   dark = false,
   className = "",
-  sizes = [176, 112, 224, 144],
+  sizes = DEFAULT_SIZES,
   spacing = 0.62,
   reveal = "scroll",
 }: Props) {

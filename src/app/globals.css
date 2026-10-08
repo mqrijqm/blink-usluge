@@ -66,21 +66,22 @@ body {
   position: absolute;
   left: 50%;
   border-radius: 9999px;
-  border: 1px solid rgba(18, 17, 11, 0.2);
+  border: 1px solid rgba(18, 17, 11, 0.52);
 }
 .eclipse-ring--double::after {
   content: "";
   position: absolute;
   inset: 18%;
   border-radius: inherit;
-  border: 1px solid rgba(18, 17, 11, 0.1);
+  border: 1px solid rgba(18, 17, 11, 0.28);
 }
 .rings--dark .eclipse-ring {
-  border-color: rgba(244, 239, 228, 0.22);
+  border-color: rgba(244, 239, 228, 0.46);
 }
 .rings--dark .eclipse-ring--double::after {
-  border-color: rgba(244, 239, 228, 0.11);
+  border-color: rgba(244, 239, 228, 0.24);
 }
+
 /* ---------- Dugmad ---------- */
 .btn-zar {
   display: inline-flex;

@@ -75,19 +75,6 @@ export const services: Service[] = [
   },
 ];
 
-export const stackItems = [
-  "TypeScript",
-  "React · Next.js",
-  "React Native · Expo",
-  "Node · NestJS",
-  "PostgreSQL · pgvector",
-  "Redis",
-  "RAG · LLM (Claude, GPT)",
-  "Docker · Kubernetes",
-  "AWS · GCP · Cloudflare",
-  "CI/CD · Terraform",
-];
-
 export type Showcase = {
   src: string;
   shape: "portrait" | "landscape";
@@ -102,6 +89,21 @@ export const showcase: Showcase[] = [
   { src: "/img/ai/stack-5.webp", shape: "portrait" },
   { src: "/img/ai/stack-6.webp", shape: "landscape" },
 ];
+
+// Inspo tekst sa desne strane stuba: rečenice iz uvoda stranice. Pojavljuju se kad slika `from` uđe u fokus.
+export const inspo: { text: string; pos: "top" | "bottom"; from: number }[] = [
+  {
+    text: "Gradimo sisteme koji idu u ruke stvarnih korisnika i ostaju jednostavni za održavanje kada postanu ozbiljni.",
+    pos: "top",
+    from: 1,
+  },
+  {
+    text: "Ista pažnja ide u rješavanje produkcijskog kvara kao i u čist kôd koji objašnjava sam sebe, i onda kada autor ode dalje.",
+    pos: "bottom",
+    from: 3,
+  },
+];
+
 export const links = {
   radovi: "https://studioblink.ba/?lang=bs#radovi",
   usluge: "https://studioblink.ba/usluge?lang=bs",

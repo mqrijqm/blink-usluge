@@ -31,7 +31,7 @@ export default function Closer() {
 
   return (
     <footer ref={root} id="kontakt" className="relative flex min-h-[100svh] flex-col overflow-hidden bg-dark text-krem">
-      <EclipseColumn dark sizes={[176, 112, 216, 140]} />
+      <EclipseColumn dark />
       <div className="label absolute left-5 top-10 z-[1] text-zar md:left-14">[ Kontakt ]</div>
 
       <div className="relative z-[1] flex flex-1 flex-col items-center justify-center gap-8 px-5 py-28 text-center">

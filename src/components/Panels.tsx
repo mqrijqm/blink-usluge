@@ -34,7 +34,7 @@ export default function Panels() {
           const shade = panel.querySelector<HTMLElement>(".panel-shade");
 
           // Prvi panel izlazi iz širine stuba mockupa (~32%), ostali iz uskog razmaka sa strane.
-          const from = i === 0 ? (ctx.conditions?.desktop ? 31 : 18) : side;
+          const from = i === 0 ? (ctx.conditions?.desktop ? 36 : 11) : side;
           gsap.fromTo(
             media,
             { clipPath: `inset(0% ${from}% 0% ${from}%)` },
@@ -79,7 +79,7 @@ export default function Panels() {
   }, []);
 
   return (
-    <section ref={root} id="usluge" aria-label="Usluge" className="relative bg-warm">
+    <section ref={root} id="usluge" aria-label="Usluge" className="relative bg-bg">
       {services.map((s) => (
         <article
           key={s.n}
