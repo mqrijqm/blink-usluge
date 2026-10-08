@@ -82,22 +82,236 @@ body {
   border-color: rgba(244, 239, 228, 0.24);
 }
 
-/* ---------- Dugmad ---------- */
-.btn-zar {
+/* ---------- Footer: 1:1 kopija footera sa studioblink.ba (.pod) ---------- */
+.pod,
+.pod *,
+.pod ::before,
+.pod ::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.pod {
+  position: relative;
+  z-index: 2;
+  display: block;
+  padding: 120px 0 28px;
+  background: rgb(13, 12, 10);
+  color: rgb(244, 239, 228);
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.6;
+  text-align: left;
+}
+.pod a {
+  color: inherit;
+  text-decoration: none;
+}
+.pod svg {
+  display: block;
+  max-width: 100%;
+}
+.pod :focus-visible {
+  outline: rgb(255, 79, 49) solid 2px;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+.pod ::selection {
+  background: rgb(255, 79, 49);
+  color: #fff;
+}
+.pod .pod-u {
+  position: relative;
+  z-index: 1;
+  max-width: 1560px;
+  margin: 0 auto;
+  padding-inline: clamp(24px, 4.6vw, 88px);
+}
+.pod .pod-g {
+  display: grid;
+  grid-template-columns: 1.35fr 0.65fr;
+  gap: 100px;
+  padding-bottom: clamp(46px, 6.6vw, 88px);
+  border-bottom: 1px solid rgba(18, 17, 11, 0.12);
+}
+.pod .pod-oz {
   display: inline-flex;
   align-items: center;
-  gap: 0.6em;
-  height: 48px;
-  padding: 0 28px;
-  border-radius: 9999px;
-  background: var(--zar);
-  color: #fff;
+  gap: 9px;
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+  font-size: 10px;
   font-weight: 400;
-  font-size: 15px;
-  transition: background 0.3s; /* bez transform: GSAP ga animira, CSS tranzicija bi se tukla s njim */
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgb(244, 239, 228);
 }
-.btn-zar:hover {
-  background: var(--zar-t);
+.pod .pod-oz::before {
+  content: "+";
+  color: rgb(255, 79, 49);
+  font-size: 13px;
+  line-height: 1;
+}
+.pod .pod-h {
+  margin-top: 18px;
+  max-width: 13ch;
+  font-size: clamp(48px, 6.4vw, 100px);
+  font-weight: 400;
+  line-height: 1.04;
+  letter-spacing: -0.055em;
+  text-wrap: balance;
+  color: rgb(244, 239, 228);
+  font-family: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
+}
+.pod .pod-vod {
+  margin-top: 18px;
+  max-width: 40ch;
+  font-size: 17px;
+  line-height: 1.7;
+  color: rgb(244, 239, 228);
+}
+.pod .pod-dug {
+  display: inline-flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 26px;
+  padding: 15px 28px;
+  border: 1px solid rgb(18, 17, 11);
+  border-radius: 999px;
+  background: rgb(244, 239, 228);
+  color: rgb(13, 12, 10);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.6;
+  transition:
+    background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    color 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+    translate 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+    border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pod .pod-dug svg {
+  width: 15px;
+  height: 15px;
+  fill: none;
+  stroke: currentcolor;
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pod .pod-dug:hover {
+  translate: 0 -2px;
+}
+.pod .pod-dug:hover svg {
+  transform: translateX(4px);
+}
+.pod .pod-v {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+  align-content: end;
+}
+.pod .pod-v > div:first-child {
+  grid-column: 1 / -1;
+}
+.pod .pod-v h4 {
+  margin: 0 0 12px;
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
+  color: rgba(244, 239, 228, 0.55);
+  font-family: var(--font-geist-mono), ui-monospace, monospace;
+}
+.pod .pod-v a,
+.pod .pod-v span {
+  display: block;
+  padding: 4px 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.8;
+  color: rgba(244, 239, 228, 0.62);
+}
+.pod .pod-v a {
+  position: relative;
+  width: max-content;
+  color: rgb(244, 239, 228);
+}
+.pod .pod-v > div:first-child a:first-of-type {
+  font-size: clamp(18px, 2vw, 27px);
+  letter-spacing: -0.025em;
+}
+.pod .pod-v a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 3px;
+  height: 1px;
+  background: currentcolor;
+  transform: scaleX(0);
+  transform-origin: 100% 50%;
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.pod .pod-v a:hover::after {
+  transform: scaleX(1);
+  transform-origin: 0 50%;
+}
+.pod .pod-wm {
+  margin-top: 64px;
+  padding: 48px 0 clamp(18px, 2.6vw, 32px);
+  border-top: 1px solid rgba(18, 17, 11, 0.12);
+}
+.pod .pod-wm img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.pod .pod-d {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(244, 239, 228, 0.14);
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(244, 239, 228, 0.55);
+}
+.pod .pod-d span {
+  display: block;
+}
+@media (max-width: 820px) {
+  .pod .pod-v h4 {
+    font-size: 12px;
+  }
+}
+@media (max-width: 700px) {
+  .pod .pod-g {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+  .pod .pod-wm {
+    margin-top: 40px;
+    padding-top: 32px;
+  }
+  .pod .pod-oz {
+    font-size: 11px;
+  }
+  .pod .pod-h {
+    overflow-wrap: anywhere;
+  }
+}
+@media (hover: none) {
+  .pod .pod-v a,
+  .pod .pod-v span {
+    padding-block: 11px;
+  }
+  .pod .pod-dug {
+    padding-block: 16px;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
