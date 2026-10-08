@@ -56,7 +56,7 @@ export const services: Service[] = [
     p2: "Umjesto velikog plana koji čeka, isporučujemo malo i često. Svaka iteracija donosi podatke na osnovu kojih odlučujemo šta dalje.",
     price: "Prototip od 1.500 € · 1–2 sedmice",
     image: "/img/ai/panel-4-mramor.webp",
-    alt: "Uvećani bijeli mramor sa tankim sivim žilama, tamni vinjet i fino zrno",
+    alt: "Ploča bijelog mramora sa sivim žilama na tamnoj pozadini sa finim zrnom",
     link: { label: "omaska.app", href: "https://omaska.app" },
   },
   {
@@ -66,8 +66,8 @@ export const services: Service[] = [
     p1: "Skalabilna infrastruktura koja izdrži kada postane ozbiljno, mikroservisi, event-driven tokovi, sharding i zero-downtime deploy.",
     p2: "Čisti API-ji (REST, WebSocket), jasna dokumentacija i sistemi koje je lako proširiti, temelj na koji se ostatak tima može osloniti.",
     price: "Razvojno partnerstvo od 2.500 € mjesečno",
-    image: "/img/ai/panel-5-svjetlo.webp",
-    alt: "Snop svjetla pogađa mrežu piksela u mraku, pikseli žare narandžasto i zlatno",
+    image: "/img/ai/panel-5-tech.webp",
+    alt: "Zbijeni mozaik kvadratnih pločica u prigušenim rđastim i ćilibarnim tonovima na tamnoj podlozi",
     link: { label: "arky.studioblink.ba", href: "https://arky.studioblink.ba" },
   },
   {
@@ -95,16 +95,18 @@ export type Showcase = {
 // Radovi u stubu: naizmjenično vertikalne (4:5) i horizontalne (1916:821), svi iste veličine unutar svog tipa.
 const w = (name: string) => ({ bw: `/img/work/${name}-bw.webp`, color: `/img/work/${name}-color.webp` });
 export const showcase: Showcase[] = [
+  // Strogo naizmjenično: vertikalna, horizontalna, vertikalna, horizontalna...
   { ...w("v1-urbano"), shape: "portrait", alt: "Urbano aplikacija na telefonu u ruci, u gradu" },
   { ...w("h1-lana"), shape: "landscape", alt: "Lana Zrnić, portfolio skulptorke, galerija fotografija" },
   { ...w("v2-sto"), shape: "portrait", alt: "Mramorni sto Calacatta sa karticom proizvoda" },
-  { ...w("h2-gs"), shape: "landscape", alt: "Golden Standard, tri kartice sistema: mašina, mikropjena, higijena" },
-  { ...w("v3-arky-app"), shape: "portrait", alt: "Arky aplikacija, mreža sa narandžastim pikselima" },
+  { ...w("h6-vizualizator"), shape: "landscape", alt: "3D vizualizator kuhinje: izbor dekora fronti, korpusa i radne ploče" },
+  { ...w("v7-mlijeko"), shape: "portrait", alt: "Golden Standard barista mlijeko, četiri tetrapaka u rukama" },
+  { ...w("h7-hermes"), shape: "landscape", alt: "Arky: pozadina sajta na jednom mjestu, kameni Hermes sa modulima" },
   { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž" },
   { ...w("h4-nova-forma"), shape: "landscape", alt: "Nova Forma, atelje za svjetlo, naslovna stranica" },
-  { ...w("v5-decade"), shape: "portrait", alt: "Tipografski poster: šta jedna decenija rada postane" },
+  { ...w("v3-arky-app"), shape: "portrait", alt: "Arky aplikacija, mreža sa narandžastim pikselima" },
   { ...w("h5-orbita"), shape: "landscape", alt: "Nova Forma Orbita, svjetiljka od opala na plavom zidu" },
-  { ...w("v6-arky-slojevi"), shape: "portrait", alt: "Arky arhitektura u tri sloja, izometrijski prikaz" },
+  { ...w("v5-decade"), shape: "portrait", alt: "Tipografski poster: šta jedna decenija rada postane" },
 ];
 
 export type InspoSlot = "tr" | "br" | "tl" | "bl";
@@ -146,6 +148,7 @@ export const links = {
   email: "mailto:kontakt@studioblink.ba",
   jjovan: "https://jjovan.com",
 };
+
 
 
 

@@ -132,7 +132,7 @@ export default function Stack() {
               }`}
             >
               <div className="stack-img absolute -inset-y-[7%] inset-x-0">
-                {/* Uvijek crno-bijelo (bez boje na hover) */}
+                {/* Zadano: crno-bijelo, nizak kontrast */}
                 <Image
                   src={s.bw}
                   alt={s.alt}
@@ -142,6 +142,16 @@ export default function Stack() {
                   blurDataURL={blurs[s.bw]}
                   sizes={s.shape === "portrait" ? "320px" : "600px"}
                   className="object-cover"
+                />
+                {/* Na hover: originalne boje (na dodir: slika u fokusu) */}
+                <Image
+                  src={s.color}
+                  alt=""
+                  aria-hidden="true"
+                  fill
+                  sizes={s.shape === "portrait" ? "320px" : "600px"}
+                  data-focus={active === i}
+                  className="object-cover opacity-0 transition-opacity duration-700 ease-out motion-reduce:transition-none [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:none)]:data-[focus=true]:opacity-100"
                 />
               </div>
             </div>
