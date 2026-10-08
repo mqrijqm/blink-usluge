@@ -53,7 +53,7 @@ export const projekti: Projekat[] = [
     ["Sajt", "3D naslovna", "Prodavnica"],
     "Sajt i prodavnica za atelje koji kamen, masiv i namještaj bira po zrnu. Na naslovnoj jedna mermerna ploča postaje kuhinjsko ostrvo, konzola i radni sto dok skrolate, a iza scene čeka prodavnica sa korpom i cijenama u KM.",
     "longi",
-    "longi",
+    "longi-ed",
     "Longi, sajt i prodavnica materijala i namještaja",
   ),
   p(
@@ -69,7 +69,7 @@ export const projekti: Projekat[] = [
     ["Sajt", "Jelovnik", "Porudžbine"],
     "Sajt riblje kuhinje i ribarnice na banjalučkoj Tržnici. Jelovnik, riblje plate za posne slave i porudžbina preko Vibera, složeni tako da gost od prvog ekrana zna šta da poruči i gdje da svrati.",
     "ihtis",
-    "ihtis",
+    "ihtis-ed",
     "Ihtis, sajt riblje kuhinje i ribarnice",
   ),
   p(
@@ -101,7 +101,7 @@ export const projekti: Projekat[] = [
     ["Brending", "Etikete", "Prodavnica"],
     "Od znaka na tegli do korpe na sajtu. Znak, etikete i deklaracije za livadski i bagremov med, pa sajt i prodavnica za porodično pčelarstvo iz Mračaja kod Prnjavora. U pilotu: radi i dorađuje se.",
     "pcelarstvo-jevtic",
-    "pcelarstvo-jevtic",
+    "pcelarstvo-jevtic-ed",
     "Pčelarstvo Jevtić, sajt i prodavnica meda",
   ),
   p(

@@ -108,22 +108,10 @@ export const paneli: Panel[] = [
   },
 ];
 
-// Tekstualna sekcija (raspored kao referenca: lijevo kratke stavke i link, desno veliki tekst, citat i link).
+// Tekstualna sekcija ispod kartica: kružni znak sa linijom lijevo, tekst desno.
 export const oNama = {
-  label: "Studio",
-  left: [
-    { key: "a.", lines: ["Sime Šolaje 1A", "78000 Banja Luka"] },
-    { key: "b.", lines: ["kontakt@studioblink.ba"], href: "mailto:kontakt@studioblink.ba" },
-    { key: "c.", lines: ["+387 66 352 469"], href: "tel:+38766352469" },
-  ],
-  cta: { label: "Zakažite razgovor", href: "https://studioblink.ba/kontakt?lang=bs" },
-  aboutLabel: "O nama:",
+  badge: "BLINK STUDIO · BANJA LUKA · BLINK STUDIO · BANJA LUKA · ",
   paragraph:
-    "Gradimo vlastite venture, a istu digitalnu evoluciju isporučujemo klijentima. Dizajn, softver i AI u jednom timu, od prve ideje do proizvoda na tržištu. Ne biramo dio posla: preuzimamo cijeli, strategiju, identitet, softver, AI i rast.",
-  quote:
-    "Jovan vodi tehnologiju i razvoj, Petar poslovanje i partnerstva. Saradnike uključujemo prema potrebama projekta, uz jasno dogovorene uloge i odgovornosti.",
-  detailsLabel: "Detalji :",
-  detailLink: { label: "Upoznajte studio", href: "https://studioblink.ba/studio?lang=bs" },
-  cornerLeft: "Sime Šolaje 1A",
-  cornerRight: "Banja Luka, BiH",
+    "Radovi na ovoj stranici obuhvataju javne sajtove, prodavnice, portale, admin sisteme i AI alate. Svaki projekat vodimo od strategije i identiteta do produkcije, sa pisanim obimom, rokom i cijenom prije početka rada. Konceptne projekte jasno označavamo, a izvorni kod i pristupi ostaju klijentu.",
+  team: "Tehnologiju i razvoj vodi Jovan Jevtić, a poslovanje i partnerstva Petar. Saradnike uključujemo prema potrebama projekta, uz jasno dogovorene uloge i odgovornosti.",
 };

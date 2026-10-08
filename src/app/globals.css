@@ -485,3 +485,39 @@ body {
 .nc-card-box:hover .nc-img {
   scale: 1.08;
 }
+
+/* ---------- Kružni znak (tekst na putanji koji se vrti), kao na studioblink.ba/studio ---------- */
+.ob-spin {
+  animation: obSpin 20s linear infinite;
+}
+.ob-spin text {
+  font-family: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  font-weight: 600;
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  fill: var(--zar);
+}
+.ob-arrow {
+  animation: obNudge 2.4s ease-in-out infinite;
+}
+@keyframes obSpin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+@keyframes obNudge {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(5px);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .ob-spin,
+  .ob-arrow {
+    animation: none;
+  }
+}
