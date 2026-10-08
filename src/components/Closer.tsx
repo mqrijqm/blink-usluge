@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
+import { hrefProizvodi, hrefUsluge } from "@/lib/site";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 // Footer: 1:1 kopija footera sa studioblink.ba (klase .pod-* u globals.css).
@@ -69,8 +70,8 @@ export default function Closer() {
             <div>
               <h4>Sajt</h4>
               <a href={`${site}/studio?lang=bs`}>Studio</a>
-              <a href={`${site}/proizvodi?lang=bs`}>Proizvodi</a>
-              <a href={`${site}/usluge?lang=bs`}>Usluge</a>
+              <a href={hrefProizvodi}>Proizvodi</a>
+              <a href={hrefUsluge}>Usluge</a>
               <a href={`${site}/kontakt?lang=bs`}>Kontakt</a>
               <a href={`${site}/privatnost?lang=bs`}>Privatnost</a>
             </div>

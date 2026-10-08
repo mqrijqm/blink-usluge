@@ -1,20 +1,12 @@
-﻿import Closer from "@/components/Closer";
-import Nav from "@/components/Nav";
-import Panels from "@/components/Panels";
-import SmoothScroll from "@/components/SmoothScroll";
-import Stack from "@/components/Stack";
+import type { Metadata } from "next";
+import { proizvodiMeta, uslugeMeta } from "@/lib/meta";
+import { SITE } from "@/lib/site";
+import ProizvodiView from "@/views/ProizvodiView";
+import UslugeView from "@/views/UslugeView";
 
-export default function UslugePage() {
-  return (
-    <>
-      <SmoothScroll />
-      <Nav />
-      <main>
-        <Stack />
-        <Panels />
-      </main>
-      <Closer />
-    </>
-  );
+// Na "/" je stranica koju objavljuje ovaj Vercel projekat (vidi src/lib/site.ts). Zadano: Usluge.
+export const metadata: Metadata = SITE === "proizvodi" ? proizvodiMeta : uslugeMeta;
+
+export default function Home() {
+  return SITE === "proizvodi" ? <ProizvodiView /> : <UslugeView />;
 }
-

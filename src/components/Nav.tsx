@@ -4,19 +4,20 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { links } from "@/data/services";
+import { SITE, hrefProizvodi, hrefUsluge } from "@/lib/site";
 
-// Usluge i Proizvodi su stranice ovog projekta (obični linkovi = puno učitavanje, pa se skrol i animacije uvijek čisto pokrenu).
+// Samo Usluge i Proizvodi su linkovi (naše dvije stranice). Ostalo u navigaciji namjerno nije povezano sa originalnim
+// sajtom studioblink.ba, da ne dođe do zabune.
 const items = [
-  { label: "Radovi", href: links.radovi, path: "" },
-  { label: "Usluge", href: "/usluge", path: "/usluge" },
-  { label: "Proizvodi", href: "/proizvodi", path: "/proizvodi" },
-  { label: "Studio", href: links.studio, path: "" },
+  { label: "Radovi", href: null, page: "" },
+  { label: "Usluge", href: hrefUsluge, page: "usluge" },
+  { label: "Proizvodi", href: hrefProizvodi, page: "proizvodi" },
+  { label: "Studio", href: null, page: "" },
 ];
 
 function Logo() {
   return (
-    <a href="https://studioblink.ba/?lang=bs" aria-label="blink, početna" className="flex items-baseline text-[30px] leading-none font-normal tracking-[-0.02em] text-inherit">
+    <span aria-label="blink" className="flex items-baseline text-[30px] leading-none font-normal tracking-[-0.02em] text-inherit">
       <span>bl</span>
       <span className="relative inline-block">
         ı
@@ -24,14 +25,14 @@ function Logo() {
       </span>
       <span>nk</span>
       <span className="ml-[3px] inline-block h-[3px] w-[14px] translate-y-[1px] bg-zar" />
-    </a>
+    </span>
   );
 }
 
 export default function Nav() {
   const pathname = usePathname();
-  // Početna stranica (/) je ista kao /usluge.
-  const current = pathname === "/" ? "/usluge" : pathname;
+  // Koja je stranica otvorena: u produkciji je određena projektom, lokalno rutom (a "/" je Usluge).
+  const current = SITE ?? (pathname === "/" ? "usluge" : pathname.replace("/", ""));
   const [solid, setSolid] = useState(false);
   const [dark, setDark] = useState(false);
 
@@ -64,16 +65,22 @@ export default function Nav() {
         <Logo />
 
         <nav className="absolute left-1/2 hidden -translate-x-1/2 gap-8 md:flex" aria-label="Glavna navigacija">
-          {items.map((it) => (
-            <a
-              key={it.label}
-              href={it.href}
-              aria-current={it.path && it.path === current ? "page" : undefined}
-              className="text-[15px] font-normal text-inherit transition-colors hover:text-zar"
-            >
-              {it.label}
-            </a>
-          ))}
+          {items.map((it) =>
+            it.href ? (
+              <a
+                key={it.label}
+                href={it.href}
+                aria-current={it.page === current ? "page" : undefined}
+                className="text-[15px] font-normal text-inherit transition-colors hover:text-zar"
+              >
+                {it.label}
+              </a>
+            ) : (
+              <span key={it.label} className="cursor-default text-[15px] font-normal text-inherit">
+                {it.label}
+              </span>
+            ),
+          )}
         </nav>
 
         <div className="flex items-center gap-3">
@@ -91,12 +98,9 @@ export default function Nav() {
               <path d="m6 9 6 6 6-6" />
             </svg>
           </button>
-          <a
-            href={links.kontakt}
-            className="inline-flex h-[40px] items-center rounded-md bg-zar px-4 text-[14px] font-normal text-white transition-colors hover:bg-[#c72c27] md:h-[46px] md:px-5 md:text-[15px]"
-          >
+          <span className="inline-flex h-[40px] cursor-default items-center rounded-md bg-zar px-4 text-[14px] font-normal text-white md:h-[46px] md:px-5 md:text-[15px]">
             Zakažite razgovor
-          </a>
+          </span>
         </div>
       </div>
     </header>
