@@ -58,7 +58,7 @@ export default function Proizvodi() {
   }, []);
 
   return (
-    <section ref={root} aria-label="Case studyji" className="relative bg-bg px-5 pt-[120px] md:px-6">
+    <section ref={root} aria-label="Case studyji" className="relative bg-bg px-5 pt-[16svh] md:px-6">
       {/* Uvod + link */}
       <div className="grid gap-10 md:grid-cols-[1.1fr_0.9fr] md:gap-6">
         <div className="pz-head rv-foot flex gap-4">

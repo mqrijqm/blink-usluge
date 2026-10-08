@@ -9,6 +9,9 @@
   --zar-t: #c72c27;
   --krem: #f4efe4;
   --warm: #efe8df; /* topli bež: sekcije priče i usluga, kao na landingu */
+  --pb-orange: #f2543d; /* kartice "Kako radimo": glavni akcenat */
+  --pb-ivory: #f3f0e9; /* svijetla podloga */
+  --pb-charcoal: #151515; /* tamna podloga */
   --dark: #0d0c0a; /* jedina tamna zona: zatvaranje / kontakt */
 }
 
@@ -22,6 +25,7 @@
   --font-sans: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-instrument), ui-sans-serif, system-ui, sans-serif;
   --font-mono: var(--font-geist-mono), ui-monospace, monospace;
+  --font-serif: var(--font-newsreader), "Times New Roman", serif;
 }
 
 html {
@@ -87,6 +91,16 @@ body {
   .pz-end {
     opacity: 0;
     transform: translateY(40px);
+  }
+  .nc-card,
+  .nc-title,
+  .nc-label,
+  .tx-in {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  .nc-w > span {
+    transform: translateY(115%);
   }
 }
 
@@ -414,3 +428,60 @@ body {
 
 
 
+
+/* ---------- Sekcija "Šta radimo": paneli koji se slažu (raspored sa patternbreak.ing) ---------- */
+.nc-w {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.14em;
+  margin-bottom: -0.14em;
+}
+.nc-w > span {
+  display: inline-block;
+}
+.font-serif {
+  font-family: var(--font-serif);
+}
+.nc-panel--dark {
+  background: var(--pb-charcoal);
+  color: var(--pb-ivory);
+}
+.nc-panel--orange {
+  background: var(--pb-orange);
+  color: var(--pb-charcoal);
+}
+.nc-panel--ivory {
+  background: var(--pb-ivory);
+  color: var(--pb-charcoal);
+  box-shadow: inset 0 0 0 1px rgba(21, 21, 21, 0.12);
+}
+.nc-card-box {
+  transition: background-color 0.2s, border-color 0.2s;
+}
+.nc-panel--dark .nc-card-box {
+  background: rgba(243, 240, 233, 0.08);
+  border-color: rgba(243, 240, 233, 0.28);
+}
+.nc-panel--orange .nc-card-box,
+.nc-panel--ivory .nc-card-box {
+  border-color: var(--pb-charcoal);
+}
+.nc-panel--orange .nc-card-box {
+  background: rgba(243, 240, 233, 0.1);
+}
+.nc-panel--dark .nc-card-box:hover {
+  background: rgba(243, 240, 233, 0.16);
+}
+.nc-panel--orange .nc-card-box:hover {
+  background: rgba(243, 240, 233, 0.28);
+}
+.nc-panel--ivory .nc-card-box:hover {
+  background: rgba(21, 21, 21, 0.05);
+}
+.nc-img {
+  transition: scale 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.nc-card-box:hover .nc-img {
+  scale: 1.08;
+}

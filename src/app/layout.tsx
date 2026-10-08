@@ -1,5 +1,5 @@
 ﻿import type { Metadata } from "next";
-import { Geist_Mono, Instrument_Sans, Manrope } from "next/font/google";
+import { Geist_Mono, Instrument_Sans, Manrope, Newsreader } from "next/font/google";
 import "./globals.css";
 
 const manrope = Manrope({
@@ -10,6 +10,13 @@ const manrope = Manrope({
 
 const instrument = Instrument_Sans({
   variable: "--font-instrument",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
+});
+
+// Serif za tekstualnu sekciju "O nama" (isti font kao akcenti na studioblink.ba).
+const newsreader = Newsreader({
+  variable: "--font-newsreader",
   subsets: ["latin", "latin-ext"],
   weight: ["400"],
 });
@@ -30,12 +37,12 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="bs"
-      className={`${manrope.variable} ${instrument.variable} ${geistMono.variable} antialiased`}
+      className={`${manrope.variable} ${instrument.variable} ${geistMono.variable} ${newsreader.variable} antialiased`}
     >
       <body>
         {/* Bez JavaScripta animacije nikad ne bi pokazale sadržaj, pa ga ovdje odmah otkrivamo. */}
         <noscript>
-          <style>{`.rv-title,.rv-item,.rv-strip,.rv-foot,.rv-card,.pz-end{opacity:1!important;transform:none!important}`}</style>
+          <style>{`.rv-title,.rv-item,.rv-strip,.rv-foot,.rv-card,.pz-end,.nc-card,.nc-title,.nc-label,.tx-in,.nc-w>span{opacity:1!important;transform:none!important}`}</style>
         </noscript>
         {children}
       </body>
