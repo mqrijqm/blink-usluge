@@ -1,0 +1,587 @@
+- generic [active] [ref=f3e1]:
+  - generic [ref=f3e3]:
+    - generic [ref=f3e4]:
+      - generic:
+        - navigation:
+          - generic [ref=f3e5]:
+            - generic [ref=f3e7]:
+              - link [ref=f3e8] [cursor=pointer]:
+                - /url: ./
+              - generic [ref=f3e16] [cursor=pointer]
+            - generic:
+              - link [ref=f3e20] [cursor=pointer]:
+                - /url: ./projects
+                - paragraph [ref=f3e22]: projects
+                - paragraph [ref=f3e24]: projects
+              - link [ref=f3e26] [cursor=pointer]:
+                - /url: ./about
+                - paragraph [ref=f3e28]: about
+                - paragraph [ref=f3e30]: about
+              - link [ref=f3e32] [cursor=pointer]:
+                - /url: ./blog
+                - paragraph [ref=f3e34]: blog
+                - paragraph [ref=f3e36]: blog
+              - link [ref=f3e38] [cursor=pointer]:
+                - /url: ./contact
+                - paragraph [ref=f3e40]: contact
+                - paragraph [ref=f3e42]: contact
+            - generic:
+              - link [ref=f3e44] [cursor=pointer]:
+                - /url: https://x.com/konrad_designs
+              - link [ref=f3e51] [cursor=pointer]:
+                - /url: https://instagram.com
+              - link [ref=f3e58] [cursor=pointer]:
+                - /url: https://www.linkedin.com/in/konrad-makowski-644255121/
+    - main [ref=f3e65]:
+      - generic [ref=f3e66]:
+        - generic [ref=f3e67]:
+          - generic [ref=f3e70] [cursor=pointer]
+          - generic [ref=f3e71]:
+            - paragraph [ref=f3e73]: EVERY BRIEF IS A BLANK CANVAS.
+            - paragraph [ref=f3e75]: WE FILL IT WITH SOMETHING WORTH KEEPING.
+          - heading "agentura" [level=1] [ref=f3e78]
+          - generic [ref=f3e79]:
+            - paragraph [ref=f3e81]: WE DON'T MAKE ADS. WE MAKE CULTURE.
+            - paragraph [ref=f3e83]: THEN WE PUT IT IN FRONT OF THE WORLD.
+          - img "Black and white portrait of a woman looking upward, used as Agentura hero image" [ref=f3e88]
+        - generic [ref=f3e101]:
+          - generic [ref=f3e102]:
+            - paragraph [ref=f3e104]: selected works
+            - paragraph [ref=f3e106]: A COLLECTION OF OBSESSIONS.
+          - generic [ref=f3e107]:
+            - link [ref=f3e108] [cursor=pointer]:
+              - /url: ./projects/vanta
+            - link [ref=f3e117] [cursor=pointer]:
+              - /url: ./projects/silhouette
+            - link [ref=f3e126] [cursor=pointer]:
+              - /url: ./projects/axiom
+            - link [ref=f3e135] [cursor=pointer]:
+              - /url: ./projects/helix
+            - link [ref=f3e144] [cursor=pointer]:
+              - /url: ./projects/fictura
+            - link [ref=f3e153] [cursor=pointer]:
+              - /url: ./projects/slay
+            - link [ref=f3e162] [cursor=pointer]:
+              - /url: ./projects/sens
+            - link [ref=f3e171] [cursor=pointer]:
+              - /url: ./projects/lasor
+          - generic [ref=f3e180]:
+            - paragraph [ref=f3e182]: WORK THAT SPEAKS BEFORE YOU READ IT.
+            - paragraph [ref=f3e184]: IMAGE FIRST. CONCEPT ALWAYS. NOTHING MADE WITHOUT REASON.
+        - generic [ref=f3e185]:
+          - generic [ref=f3e192]:
+            - generic [ref=f3e193]:
+              - heading "01" [level=6] [ref=f3e195]
+              - paragraph [ref=f3e197]: THE MARK THAT STAYS LONG AFTER THE CAMPAIGN ENDS
+            - generic [ref=f3e198]:
+              - paragraph [ref=f3e201]: visual identity
+              - heading "branding" [level=2] [ref=f3e203]
+          - generic [ref=f3e210]:
+            - generic [ref=f3e211]:
+              - heading "02" [level=6] [ref=f3e213]
+              - paragraph [ref=f3e215]: WE DON'T REACT TO TRENDS. WE DECIDE WHAT'S NEXT.
+            - generic [ref=f3e216]:
+              - paragraph [ref=f3e219]: VISION
+              - heading "creative direction" [level=2] [ref=f3e221]
+          - generic [ref=f3e228]:
+            - generic [ref=f3e229]:
+              - heading "03" [level=6] [ref=f3e231]
+              - paragraph [ref=f3e233]: EVERY FRAME A DECISION. EVERY IMAGE A STATEMENT.
+            - generic [ref=f3e234]:
+              - paragraph [ref=f3e237]: FORM
+              - heading "EDITORIAL" [level=2] [ref=f3e239]
+        - generic [ref=f3e241]:
+          - generic [ref=f3e242]:
+            - generic [ref=f3e243]:
+              - paragraph [ref=f3e245]: our clients
+              - paragraph [ref=f3e247]: what they say
+            - generic [ref=f3e248]:
+              - heading "trusted by thousands" [level=2] [ref=f3e251]
+              - generic [ref=f3e254]:
+                - generic [ref=f3e259] [cursor=pointer]:
+                  - paragraph [ref=f3e261]:
+                    - generic [ref=f3e262]:
+                      - generic [ref=f3e263]: T
+                      - generic [ref=f3e264]: h
+                      - generic [ref=f3e265]: e
+                      - generic [ref=f3e266]: "y"
+                    - generic [ref=f3e267]:
+                      - generic [ref=f3e268]: d
+                      - generic [ref=f3e269]: i
+                      - generic [ref=f3e270]: d
+                      - generic [ref=f3e271]: "n"
+                      - generic [ref=f3e272]: "'"
+                      - generic [ref=f3e273]: t
+                    - generic [ref=f3e274]:
+                      - generic [ref=f3e275]: p
+                      - generic [ref=f3e276]: r
+                      - generic [ref=f3e277]: e
+                      - generic [ref=f3e278]: s
+                      - generic [ref=f3e279]: e
+                      - generic [ref=f3e280]: "n"
+                      - generic [ref=f3e281]: t
+                    - generic [ref=f3e282]:
+                      - generic [ref=f3e283]: o
+                      - generic [ref=f3e284]: p
+                      - generic [ref=f3e285]: t
+                      - generic [ref=f3e286]: i
+                      - generic [ref=f3e287]: o
+                      - generic [ref=f3e288]: "n"
+                      - generic [ref=f3e289]: s
+                      - generic [ref=f3e290]: .
+                    - generic [ref=f3e291]:
+                      - generic [ref=f3e292]: T
+                      - generic [ref=f3e293]: h
+                      - generic [ref=f3e294]: e
+                      - generic [ref=f3e295]: "y"
+                    - generic [ref=f3e296]:
+                      - generic [ref=f3e297]: p
+                      - generic [ref=f3e298]: r
+                      - generic [ref=f3e299]: e
+                      - generic [ref=f3e300]: s
+                      - generic [ref=f3e301]: e
+                      - generic [ref=f3e302]: "n"
+                      - generic [ref=f3e303]: t
+                      - generic [ref=f3e304]: e
+                      - generic [ref=f3e305]: d
+                    - generic [ref=f3e306]: a
+                    - generic [ref=f3e308]:
+                      - generic [ref=f3e309]: d
+                      - generic [ref=f3e310]: i
+                      - generic [ref=f3e311]: r
+                      - generic [ref=f3e312]: e
+                      - generic [ref=f3e313]: c
+                      - generic [ref=f3e314]: t
+                      - generic [ref=f3e315]: i
+                      - generic [ref=f3e316]: o
+                      - generic [ref=f3e317]: "n"
+                    - generic [ref=f3e318]: —
+                    - generic [ref=f3e320]:
+                      - generic [ref=f3e321]: a
+                      - generic [ref=f3e322]: "n"
+                      - generic [ref=f3e323]: d
+                    - generic [ref=f3e324]:
+                      - generic [ref=f3e325]: i
+                      - generic [ref=f3e326]: t
+                    - generic [ref=f3e327]:
+                      - generic [ref=f3e328]: w
+                      - generic [ref=f3e329]: a
+                      - generic [ref=f3e330]: s
+                    - generic [ref=f3e331]:
+                      - generic [ref=f3e332]: t
+                      - generic [ref=f3e333]: h
+                      - generic [ref=f3e334]: e
+                    - generic [ref=f3e335]:
+                      - generic [ref=f3e336]: r
+                      - generic [ref=f3e337]: i
+                      - generic [ref=f3e338]: g
+                      - generic [ref=f3e339]: h
+                      - generic [ref=f3e340]: t
+                    - generic [ref=f3e341]:
+                      - generic [ref=f3e342]: o
+                      - generic [ref=f3e343]: "n"
+                      - generic [ref=f3e344]: e
+                      - generic [ref=f3e345]: .
+                    - generic [ref=f3e346]:
+                      - generic [ref=f3e347]: W
+                      - generic [ref=f3e348]: e
+                    - generic [ref=f3e349]:
+                      - generic [ref=f3e350]: s
+                      - generic [ref=f3e351]: t
+                      - generic [ref=f3e352]: o
+                      - generic [ref=f3e353]: p
+                      - generic [ref=f3e354]: p
+                      - generic [ref=f3e355]: e
+                      - generic [ref=f3e356]: d
+                    - generic [ref=f3e357]:
+                      - generic [ref=f3e358]: t
+                      - generic [ref=f3e359]: h
+                      - generic [ref=f3e360]: e
+                    - generic [ref=f3e361]:
+                      - generic [ref=f3e362]: i
+                      - generic [ref=f3e363]: "n"
+                      - generic [ref=f3e364]: t
+                      - generic [ref=f3e365]: e
+                      - generic [ref=f3e366]: r
+                      - generic [ref=f3e367]: "n"
+                      - generic [ref=f3e368]: a
+                      - generic [ref=f3e369]: l
+                    - generic [ref=f3e370]:
+                      - generic [ref=f3e371]: r
+                      - generic [ref=f3e372]: e
+                      - generic [ref=f3e373]: v
+                      - generic [ref=f3e374]: i
+                      - generic [ref=f3e375]: e
+                      - generic [ref=f3e376]: w
+                    - generic [ref=f3e377]:
+                      - generic [ref=f3e378]: a
+                      - generic [ref=f3e379]: f
+                      - generic [ref=f3e380]: t
+                      - generic [ref=f3e381]: e
+                      - generic [ref=f3e382]: r
+                    - generic [ref=f3e383]:
+                      - generic [ref=f3e384]: t
+                      - generic [ref=f3e385]: h
+                      - generic [ref=f3e386]: e
+                    - generic [ref=f3e387]:
+                      - generic [ref=f3e388]: f
+                      - generic [ref=f3e389]: i
+                      - generic [ref=f3e390]: r
+                      - generic [ref=f3e391]: s
+                      - generic [ref=f3e392]: t
+                    - generic [ref=f3e393]:
+                      - generic [ref=f3e394]: c
+                      - generic [ref=f3e395]: o
+                      - generic [ref=f3e396]: "n"
+                      - generic [ref=f3e397]: c
+                      - generic [ref=f3e398]: e
+                      - generic [ref=f3e399]: p
+                      - generic [ref=f3e400]: t
+                      - generic [ref=f3e401]: .
+                  - heading "A g a t h a R i c h a r d s" [level=6] [ref=f3e403]:
+                    - generic [ref=f3e404]:
+                      - generic [ref=f3e405]: A
+                      - generic [ref=f3e406]: g
+                      - generic [ref=f3e407]: a
+                      - generic [ref=f3e408]: t
+                      - generic [ref=f3e409]: h
+                      - generic [ref=f3e410]: a
+                    - generic [ref=f3e411]:
+                      - generic [ref=f3e412]: R
+                      - generic [ref=f3e413]: i
+                      - generic [ref=f3e414]: c
+                      - generic [ref=f3e415]: h
+                      - generic [ref=f3e416]: a
+                      - generic [ref=f3e417]: r
+                      - generic [ref=f3e418]: d
+                      - generic [ref=f3e419]: s
+                - generic [ref=f3e421] [cursor=pointer]
+                - generic [ref=f3e425] [cursor=pointer]
+            - list [ref=f3e430]:
+              - listitem [ref=f3e431]:
+                - img "Logoipsum University logo" [ref=f3e436]
+              - listitem [ref=f3e437]:
+                - img "Logoipsum company logo" [ref=f3e442]
+              - listitem [ref=f3e443]:
+                - img "Logoipsum brand logo" [ref=f3e448]
+              - listitem [ref=f3e449]:
+                - img "Logoipsum company logo" [ref=f3e454]
+              - listitem [ref=f3e455]:
+                - img "Logoipsum company logo" [ref=f3e460]
+              - listitem [ref=f3e461]:
+                - img "Logoipsum company logo" [ref=f3e466]
+          - generic [ref=f3e467]:
+            - generic [ref=f3e468]:
+              - paragraph [ref=f3e470]: journal
+              - paragraph [ref=f3e472]: LATEST THINKING
+            - generic [ref=f3e473]:
+              - link "M i a M i c h i B R A N D I N G Portrait of a woman in a black hat with editorial styling Portrait of a woman in a black hat with editorial styling T H E M A R K T H A T S T A Y S 0 0 1" [ref=f3e475] [cursor=pointer]:
+                - /url: ./blog/the-mark-that-stays
+                - generic [ref=f3e478]:
+                  - generic [ref=f3e479]:
+                    - paragraph [ref=f3e481]:
+                      - generic [ref=f3e482]:
+                        - generic [ref=f3e483]: M
+                        - generic [ref=f3e484]: i
+                        - generic [ref=f3e485]: a
+                      - generic [ref=f3e486]:
+                        - generic [ref=f3e487]: M
+                        - generic [ref=f3e488]: i
+                        - generic [ref=f3e489]: c
+                        - generic [ref=f3e490]: h
+                        - generic [ref=f3e491]: i
+                    - paragraph [ref=f3e493]:
+                      - generic [ref=f3e494]:
+                        - generic [ref=f3e495]: B
+                        - generic [ref=f3e496]: R
+                        - generic [ref=f3e497]: A
+                        - generic [ref=f3e498]: "N"
+                        - generic [ref=f3e499]: D
+                        - generic [ref=f3e500]: I
+                        - generic [ref=f3e501]: "N"
+                        - generic [ref=f3e502]: G
+                  - generic [ref=f3e503]:
+                    - img "Portrait of a woman in a black hat with editorial styling" [ref=f3e506]
+                    - img "Portrait of a woman in a black hat with editorial styling" [ref=f3e510]
+                  - generic [ref=f3e511]:
+                    - heading "T H E M A R K T H A T S T A Y S" [level=6] [ref=f3e513]:
+                      - generic [ref=f3e514]:
+                        - generic [ref=f3e515]: T
+                        - generic [ref=f3e516]: H
+                        - generic [ref=f3e517]: E
+                      - generic [ref=f3e518]:
+                        - generic [ref=f3e519]: M
+                        - generic [ref=f3e520]: A
+                        - generic [ref=f3e521]: R
+                        - generic [ref=f3e522]: K
+                      - generic [ref=f3e523]:
+                        - generic [ref=f3e524]: T
+                        - generic [ref=f3e525]: H
+                        - generic [ref=f3e526]: A
+                        - generic [ref=f3e527]: T
+                      - generic [ref=f3e528]:
+                        - generic [ref=f3e529]: S
+                        - generic [ref=f3e530]: T
+                        - generic [ref=f3e531]: A
+                        - generic [ref=f3e532]: "Y"
+                        - generic [ref=f3e533]: S
+                    - heading "0 0 1" [level=6] [ref=f3e535]:
+                      - generic [ref=f3e536]:
+                        - generic [ref=f3e537]: "0"
+                        - generic [ref=f3e538]: "0"
+                        - generic [ref=f3e539]: "1"
+              - link "A d a m L a s o r A r t D i r e c t i o n Figure with dramatic backlighting and motion blur Figure with dramatic backlighting and motion blur F A S H I O N I S D E A D . L O N G L I V E F A S H I O N 0 0 2" [ref=f3e541] [cursor=pointer]:
+                - /url: ./blog/fashion-is-dead.-long-live-fashion
+                - generic [ref=f3e544]:
+                  - generic [ref=f3e545]:
+                    - paragraph [ref=f3e547]:
+                      - generic [ref=f3e548]:
+                        - generic [ref=f3e549]: A
+                        - generic [ref=f3e550]: d
+                        - generic [ref=f3e551]: a
+                        - generic [ref=f3e552]: m
+                      - generic [ref=f3e553]:
+                        - generic [ref=f3e554]: L
+                        - generic [ref=f3e555]: a
+                        - generic [ref=f3e556]: s
+                        - generic [ref=f3e557]: o
+                        - generic [ref=f3e558]: r
+                    - paragraph [ref=f3e560]:
+                      - generic [ref=f3e561]:
+                        - generic [ref=f3e562]: A
+                        - generic [ref=f3e563]: r
+                        - generic [ref=f3e564]: t
+                      - generic [ref=f3e565]:
+                        - generic [ref=f3e566]: D
+                        - generic [ref=f3e567]: i
+                        - generic [ref=f3e568]: r
+                        - generic [ref=f3e569]: e
+                        - generic [ref=f3e570]: c
+                        - generic [ref=f3e571]: t
+                        - generic [ref=f3e572]: i
+                        - generic [ref=f3e573]: o
+                        - generic [ref=f3e574]: "n"
+                  - generic [ref=f3e575]:
+                    - img "Figure with dramatic backlighting and motion blur" [ref=f3e578]
+                    - img "Figure with dramatic backlighting and motion blur" [ref=f3e582]
+                  - generic [ref=f3e583]:
+                    - heading "F A S H I O N I S D E A D . L O N G L I V E F A S H I O N" [level=6] [ref=f3e585]:
+                      - generic [ref=f3e586]:
+                        - generic [ref=f3e587]: F
+                        - generic [ref=f3e588]: A
+                        - generic [ref=f3e589]: S
+                        - generic [ref=f3e590]: H
+                        - generic [ref=f3e591]: I
+                        - generic [ref=f3e592]: O
+                        - generic [ref=f3e593]: "N"
+                      - generic [ref=f3e594]:
+                        - generic [ref=f3e595]: I
+                        - generic [ref=f3e596]: S
+                      - generic [ref=f3e597]:
+                        - generic [ref=f3e598]: D
+                        - generic [ref=f3e599]: E
+                        - generic [ref=f3e600]: A
+                        - generic [ref=f3e601]: D
+                        - generic [ref=f3e602]: .
+                      - generic [ref=f3e603]:
+                        - generic [ref=f3e604]: L
+                        - generic [ref=f3e605]: O
+                        - generic [ref=f3e606]: "N"
+                        - generic [ref=f3e607]: G
+                      - generic [ref=f3e608]:
+                        - generic [ref=f3e609]: L
+                        - generic [ref=f3e610]: I
+                        - generic [ref=f3e611]: V
+                        - generic [ref=f3e612]: E
+                      - generic [ref=f3e613]:
+                        - generic [ref=f3e614]: F
+                        - generic [ref=f3e615]: A
+                        - generic [ref=f3e616]: S
+                        - generic [ref=f3e617]: H
+                        - generic [ref=f3e618]: I
+                        - generic [ref=f3e619]: O
+                        - generic [ref=f3e620]: "N"
+                    - heading "0 0 2" [level=6] [ref=f3e622]:
+                      - generic [ref=f3e623]:
+                        - generic [ref=f3e624]: "0"
+                        - generic [ref=f3e625]: "0"
+                        - generic [ref=f3e626]: "2"
+              - link "A d a m L a s o r A r t D i r e c t i o n Full-length portrait in a structured black jacket with editorial lighting Full-length portrait in a structured black jacket with editorial lighting W h y V i s u a l S i l e n c e i s t h e U l t i m a t e A u t h o r i t y . 0 0 3" [ref=f3e628] [cursor=pointer]:
+                - /url: ./blog/why-visual-silence-is-the-ultimate-authority
+                - generic [ref=f3e631]:
+                  - generic [ref=f3e632]:
+                    - paragraph [ref=f3e634]:
+                      - generic [ref=f3e635]:
+                        - generic [ref=f3e636]: A
+                        - generic [ref=f3e637]: d
+                        - generic [ref=f3e638]: a
+                        - generic [ref=f3e639]: m
+                      - generic [ref=f3e640]:
+                        - generic [ref=f3e641]: L
+                        - generic [ref=f3e642]: a
+                        - generic [ref=f3e643]: s
+                        - generic [ref=f3e644]: o
+                        - generic [ref=f3e645]: r
+                    - paragraph [ref=f3e647]:
+                      - generic [ref=f3e648]:
+                        - generic [ref=f3e649]: A
+                        - generic [ref=f3e650]: r
+                        - generic [ref=f3e651]: t
+                      - generic [ref=f3e652]:
+                        - generic [ref=f3e653]: D
+                        - generic [ref=f3e654]: i
+                        - generic [ref=f3e655]: r
+                        - generic [ref=f3e656]: e
+                        - generic [ref=f3e657]: c
+                        - generic [ref=f3e658]: t
+                        - generic [ref=f3e659]: i
+                        - generic [ref=f3e660]: o
+                        - generic [ref=f3e661]: "n"
+                  - generic [ref=f3e662]:
+                    - img "Full-length portrait in a structured black jacket with editorial lighting" [ref=f3e665]
+                    - img "Full-length portrait in a structured black jacket with editorial lighting" [ref=f3e669]
+                  - generic [ref=f3e670]:
+                    - heading "W h y V i s u a l S i l e n c e i s t h e U l t i m a t e A u t h o r i t y ." [level=6] [ref=f3e672]:
+                      - generic [ref=f3e673]:
+                        - generic [ref=f3e674]: W
+                        - generic [ref=f3e675]: h
+                        - generic [ref=f3e676]: "y"
+                      - generic [ref=f3e677]:
+                        - generic [ref=f3e678]: V
+                        - generic [ref=f3e679]: i
+                        - generic [ref=f3e680]: s
+                        - generic [ref=f3e681]: u
+                        - generic [ref=f3e682]: a
+                        - generic [ref=f3e683]: l
+                      - generic [ref=f3e684]:
+                        - generic [ref=f3e685]: S
+                        - generic [ref=f3e686]: i
+                        - generic [ref=f3e687]: l
+                        - generic [ref=f3e688]: e
+                        - generic [ref=f3e689]: "n"
+                        - generic [ref=f3e690]: c
+                        - generic [ref=f3e691]: e
+                      - generic [ref=f3e692]:
+                        - generic [ref=f3e693]: i
+                        - generic [ref=f3e694]: s
+                      - generic [ref=f3e695]:
+                        - generic [ref=f3e696]: t
+                        - generic [ref=f3e697]: h
+                        - generic [ref=f3e698]: e
+                      - generic [ref=f3e699]:
+                        - generic [ref=f3e700]: U
+                        - generic [ref=f3e701]: l
+                        - generic [ref=f3e702]: t
+                        - generic [ref=f3e703]: i
+                        - generic [ref=f3e704]: m
+                        - generic [ref=f3e705]: a
+                        - generic [ref=f3e706]: t
+                        - generic [ref=f3e707]: e
+                      - generic [ref=f3e708]:
+                        - generic [ref=f3e709]: A
+                        - generic [ref=f3e710]: u
+                        - generic [ref=f3e711]: t
+                        - generic [ref=f3e712]: h
+                        - generic [ref=f3e713]: o
+                        - generic [ref=f3e714]: r
+                        - generic [ref=f3e715]: i
+                        - generic [ref=f3e716]: t
+                        - generic [ref=f3e717]: "y"
+                        - generic [ref=f3e718]: .
+                    - heading "0 0 3" [level=6] [ref=f3e720]:
+                      - generic [ref=f3e721]:
+                        - generic [ref=f3e722]: "0"
+                        - generic [ref=f3e723]: "0"
+                        - generic [ref=f3e724]: "3"
+        - generic [ref=f3e737]:
+          - generic [ref=f3e738]:
+            - paragraph [ref=f3e740]: WE DON'T WAIT FOR THE RIGHT BRIEF. WE WRITE IT.
+            - paragraph [ref=f3e742]: THE NEXT CAMPAIGN STARTS WITH ONE CONVERSATION.
+          - generic [ref=f3e743]:
+            - img "Black and white editorial photo of a woman in a flowing dress, Agentura CTA section" [ref=f3e746]
+            - generic [ref=f3e747]:
+              - img "Portrait of Sofia Varen, Creative Lead at Agentura" [ref=f3e751]
+              - generic [ref=f3e752]:
+                - heading "SOFIA VAREN" [level=5] [ref=f3e754]
+                - paragraph [ref=f3e756]: AGENTURA — CREATIVE LEAD
+            - generic [ref=f3e757]:
+              - heading "LET'S MAKE SOMETHING WORTH KEEPING." [level=2] [ref=f3e759]
+              - paragraph [ref=f3e761]: WE TAKE ON A LIMITED NUMBER OF PROJECTS EACH YEAR. IF YOU KNOW, YOU KNOW. REACH OUT.
+              - link [ref=f3e764] [cursor=pointer]:
+                - /url: ./contact
+                - paragraph [ref=f3e766]: BOOK A FREE TOUR
+    - generic [ref=f3e774]:
+      - generic [ref=f3e776]:
+        - generic [ref=f3e777]:
+          - paragraph [ref=f3e779]: EVERY PROJECT STARTS HERE.
+          - paragraph [ref=f3e781]: BUILT ON CRAFT. DRIVEN BY OBSESSION.
+        - generic [ref=f3e782]:
+          - heading "READY TO MAKE SOMETHING WORTH KEEPING?" [level=2] [ref=f3e784]
+          - link [ref=f3e786] [cursor=pointer]:
+            - /url: ./contact
+            - paragraph [ref=f3e788]: reach out
+        - generic [ref=f3e801]:
+          - paragraph [ref=f3e803]: ONE CONVERSATION CAN CHANGE EVERYTHING.
+          - paragraph [ref=f3e805]: IF YOU KNOW, YOU KNOW. REACH OUT.
+      - contentinfo [ref=f3e806]:
+        - generic [ref=f3e807]:
+          - generic [ref=f3e808]:
+            - paragraph [ref=f3e810]: WE DON'T MAKE ADS. WE MAKE CULTURE.
+            - paragraph [ref=f3e812]: THEN WE PUT IT IN FRONT OF THE WORLD.
+          - generic [ref=f3e813]:
+            - img [ref=f3e814]:
+              - heading "agentura" [level=1] [ref=f3e816]
+            - generic [ref=f3e818] [cursor=pointer]:
+              - link [ref=f3e820]:
+                - /url: ./projects
+                - paragraph [ref=f3e822]: projects
+                - paragraph [ref=f3e824]: projects
+              - link [ref=f3e826]:
+                - /url: ./projects/vanta
+                - paragraph [ref=f3e828]: Project single
+                - paragraph [ref=f3e830]: Project single
+              - link [ref=f3e832]:
+                - /url: ./blog
+                - paragraph [ref=f3e834]: blog
+                - paragraph [ref=f3e836]: blog
+              - link [ref=f3e838]:
+                - /url: ./blog/the-mark-that-stays
+                - paragraph [ref=f3e840]: blog single
+                - paragraph [ref=f3e842]: blog single
+              - link [ref=f3e844]:
+                - /url: ./contact
+                - paragraph [ref=f3e846]: Contact
+                - paragraph [ref=f3e848]: Contact
+              - link [ref=f3e850]:
+                - /url: ./about
+                - paragraph [ref=f3e852]: About us
+                - paragraph [ref=f3e854]: About us
+              - link [ref=f3e856]:
+                - /url: ./404
+                - paragraph [ref=f3e858]: 404 Page
+                - paragraph [ref=f3e860]: 404 Page
+            - generic [ref=f3e861] [cursor=pointer]:
+              - link [ref=f3e863]:
+                - /url: https://x.com/konrad_designs
+              - link [ref=f3e870]:
+                - /url: https://instagram.com
+              - link [ref=f3e877]:
+                - /url: https://www.linkedin.com/in/konrad-makowski-644255121/
+          - generic [ref=f3e883]:
+            - paragraph [ref=f3e886]: © 2026 AGENTURA. ALL RIGHTS RESERVED.
+            - generic [ref=f3e887]:
+              - paragraph [ref=f3e889]: "Crafted by:"
+              - link [ref=f3e891] [cursor=pointer]:
+                - /url: https://konrad.design
+                - paragraph [ref=f3e893]: Konrad Makowski
+                - paragraph [ref=f3e895]: Konrad Makowski
+    - generic [ref=f3e898]:
+      - link [ref=f3e899] [cursor=pointer]:
+        - /url: https://buy.polar.sh/polar_cl_E0lDmBHl3LxXorDUrCYvTbO5NeDTaKQF8FQfi3q9BCk
+        - heading "Buy template" [level=6] [ref=f3e901]
+      - link [ref=f3e902] [cursor=pointer]:
+        - /url: https://framer.link/1BDfEPZ
+        - heading "More Templates" [level=6] [ref=f3e904]
+  - link [ref=f3e905] [cursor=pointer]:
+    - /url: https://www.framer.com
+    - paragraph [ref=f3e909]: Create a free website with Framer, the website builder loved by startups, designers and agencies.

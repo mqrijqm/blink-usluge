@@ -1,0 +1,38 @@
+import type { Metadata } from "next";
+import { Geist_Mono, Instrument_Sans, Manrope } from "next/font/google";
+import "./globals.css";
+
+const manrope = Manrope({
+  variable: "--font-manrope",
+  subsets: ["latin", "latin-ext"],
+  weight: ["300", "400", "500"],
+});
+
+const instrument = Instrument_Sans({
+  variable: "--font-instrument",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin", "latin-ext"],
+  weight: ["400"],
+});
+
+export const metadata: Metadata = {
+  title: "Usluge: web stranice, aplikacije, AI i brending · blink",
+  description:
+    "Blink usluge: produkcijski softver, ne demo. Razvoj po mjeri, AI, gradovi i institucije, MVP, backend i identitet.",
+};
+
+export default function RootLayout({ children }: LayoutProps<"/">) {
+  return (
+    <html
+      lang="bs"
+      className={`${manrope.variable} ${instrument.variable} ${geistMono.variable} antialiased`}
+    >
+      <body>{children}</body>
+    </html>
+  );
+}
