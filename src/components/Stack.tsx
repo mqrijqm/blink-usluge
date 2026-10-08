@@ -7,6 +7,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { EclipseColumn } from "./Eclipse";
 import { inspo, showcase, type InspoSlot } from "@/data/services";
 
+// Krugovi prve sekcije: dovoljno mali da se vide kao cijeli krugovi (izvan komponente = stalna identičnost liste).
+const RING_SIZES = [640, 400, 800, 520];
+
 const slotClass: Record<InspoSlot, string> = {
   tr: "right-14 top-[110px] text-right",
   br: "bottom-12 right-14 text-right",
@@ -76,7 +79,7 @@ export default function Stack() {
   return (
     <section ref={root} id="stack" className="relative overflow-clip bg-bg">
       {/* Krugovi: velika kolona po sredini, linije bez ispune, ispod svega */}
-      <EclipseColumn />
+      <EclipseColumn sizes={RING_SIZES} spacing={0.5} />
 
       {/* Fiksni inspo tekst u 4 ugla: pojavljuje se naknadno i smjenjuje se kako skroluješ.
           Prva polovina rečenice ide desno, druga lijevo (poravnata lijevo). */}
