@@ -152,7 +152,7 @@ export default function Stack() {
                   fill
                   sizes={s.shape === "portrait" ? "320px" : "600px"}
                   data-focus={active === i}
-                  className="object-cover opacity-0 transition-opacity duration-700 ease-out motion-reduce:transition-none [@media(hover:hover)]:group-hover:opacity-100 [@media(hover:none)]:data-[focus=true]:opacity-100"
+                  className="object-cover opacity-0 transition-opacity duration-700 ease-out motion-reduce:transition-none [@media(any-hover:hover)]:group-hover:opacity-100 [@media(any-hover:none)]:data-[focus=true]:opacity-100"
                 />
               </div>
             </div>

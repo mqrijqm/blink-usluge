@@ -99,12 +99,10 @@ export const showcase: Showcase[] = [
   { ...w("v1-urbano"), shape: "portrait", alt: "Urbano aplikacija na telefonu u ruci, u gradu" },
   { ...w("h1-lana"), shape: "landscape", alt: "Lana Zrnić, portfolio skulptorke, galerija fotografija" },
   { ...w("v2-sto"), shape: "portrait", alt: "Mramorni sto Calacatta sa karticom proizvoda" },
-  { ...w("h6-vizualizator"), shape: "landscape", alt: "3D vizualizator kuhinje: izbor dekora fronti, korpusa i radne ploče" },
   { ...w("v7-mlijeko"), shape: "portrait", alt: "Golden Standard barista mlijeko, četiri tetrapaka u rukama" },
   { ...w("h7-hermes"), shape: "landscape", alt: "Arky: pozadina sajta na jednom mjestu, kameni Hermes sa modulima" },
   { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž" },
   { ...w("h5-orbita"), shape: "landscape", alt: "Nova Forma Orbita, svjetiljka od opala na plavom zidu" },
-  { ...w("v5-decade"), shape: "portrait", alt: "Tipografski poster: šta jedna decenija rada postane" },
 ];
 
 export type InspoSlot = "tr" | "br" | "tl" | "bl";

@@ -12,7 +12,7 @@ export default function CursorDot() {
   useEffect(() => {
     const el = dot.current;
     if (!el) return;
-    if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+    if (!window.matchMedia("(any-hover: hover) and (any-pointer: fine)").matches) return;
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     gsap.set(el, { xPercent: -50, yPercent: -50, opacity: 0 });

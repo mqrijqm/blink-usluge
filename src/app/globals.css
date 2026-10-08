@@ -99,17 +99,16 @@ body {
   scale: 0.62;
   transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), scale 1s cubic-bezier(0.16, 1, 0.3, 1);
 }
-@media (hover: hover) {
-  .pz-card:hover .pz-base,
-  .pz-card:focus-visible .pz-base {
-    filter: blur(22px);
-    scale: 1.12;
-  }
-  .pz-card:hover .pz-lens,
-  .pz-card:focus-visible .pz-lens {
-    opacity: 1;
-    scale: 1;
-  }
+/* Bez uslova (hover: hover): ekrani osjetljivi na dodir često prijavljuju "nema miša", pa efekat nikad ne bi radio. */
+.pz-card:hover .pz-base,
+.pz-card:focus-visible .pz-base {
+  filter: blur(22px);
+  scale: 1.12;
+}
+.pz-card:hover .pz-lens,
+.pz-card:focus-visible .pz-lens {
+  opacity: 1;
+  scale: 1;
 }
 @media (prefers-reduced-motion: reduce) {
   .pz-base,
