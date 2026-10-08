@@ -55,8 +55,8 @@ export const services: Service[] = [
     p1: "Od ideje do lansiranog proizvoda, brzo, fokusirano i bez suvišnog. Prvu verziju gradimo tako da uči iz stvarnih korisnika.",
     p2: "Umjesto velikog plana koji čeka, isporučujemo malo i često. Svaka iteracija donosi podatke na osnovu kojih odlučujemo šta dalje.",
     price: "Prototip od 1.500 € · 1–2 sedmice",
-    image: "/img/ai/panel-4-admin.webp",
-    alt: "Minimalistički admin panel od krem kartica, grafikona i prekidača, bez teksta, jedan narandžasti stub",
+    image: "/img/ai/panel-4-mramor.webp",
+    alt: "Uvećani bijeli mramor sa tankim sivim žilama, tamni vinjet i fino zrno",
     link: { label: "omaska.app", href: "https://omaska.app" },
   },
   {
@@ -100,7 +100,6 @@ export const showcase: Showcase[] = [
   { ...w("v2-sto"), shape: "portrait", alt: "Mramorni sto Calacatta sa karticom proizvoda" },
   { ...w("h2-gs"), shape: "landscape", alt: "Golden Standard, tri kartice sistema: mašina, mikropjena, higijena" },
   { ...w("v3-arky-app"), shape: "portrait", alt: "Arky aplikacija, mreža sa narandžastim pikselima" },
-  { ...w("h3-kafa"), shape: "landscape", alt: "Golden Standard, makro zrna kafe" },
   { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž" },
   { ...w("h4-nova-forma"), shape: "landscape", alt: "Nova Forma, atelje za svjetlo, naslovna stranica" },
   { ...w("v5-decade"), shape: "portrait", alt: "Tipografski poster: šta jedna decenija rada postane" },
@@ -130,7 +129,8 @@ const pairs: { right: string; left: string }[] = [
 
 export const inspo: Inspo[] = pairs.flatMap((pair, n) => {
   const isA = n % 2 === 0;
-  const from = n + 1;
+  // Zadnji parovi ne smiju izaći izvan broja slika (zadnja slika drži zadnja dva para).
+  const from = Math.min(n + 1, showcase.length - 1);
   const to = n + 3;
   return [
     { text: pair.right, slot: (isA ? "tr" : "br") as InspoSlot, from, to },

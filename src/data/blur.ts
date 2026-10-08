@@ -1,8 +1,8 @@
 // Generisano skriptom: sićušni zamućeni pretpregledi slika (prikazuju se dok se prava slika ne učita).
 export const blurs: Record<string, string> = {
+  "/img/ai/panel-4-mramor.webp": "data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAACQAQCdASoQAAsAA4BaJZwAAh25nUAA/vNdoAmnE/fz8Nf2iZiPvb4ioV6EQGa+JLpVewIEAAA=",
   "/img/work/h1-lana-bw.webp": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACQAQCdASoQAAcAA4BaJaQAAiFd5LgA/pi3QjQnQTmbnF8EZ5fAgAAA",
   "/img/work/h2-gs-bw.webp": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoQAAcAA4BaJaQAAlc8ouIAAPgL+mO1n0t8A5CAAAA=",
-  "/img/work/h3-kafa-bw.webp": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAADQAQCdASoQAAcAA4BaJaQAAlw3ihtFgAD+y/fAeT0//cCt2VGAAA==",
   "/img/work/h4-nova-forma-bw.webp": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAQCdASoQAAcAA4BaJaQAAtqIdVAAAP7emRNUHFYCwkckzA+UVbUAAAA=",
   "/img/work/h5-orbita-bw.webp": "data:image/webp;base64,UklGRi4AAABXRUJQVlA4ICIAAACwAQCdASoQAAcAA4BaJaQAAtdsvfWAAP5vY75k6sYj+gAA",
   "/img/work/v1-urbano-bw.webp": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABwAwCdASoQABQAPu1kqk2ppaQiMAgBMB2JaQAAQgxjwP3oHgAA+MCj8O+4q0SkMlnMCQUAEFsY6GZP4dI7wUBl2gAAAA==",
@@ -14,7 +14,6 @@ export const blurs: Record<string, string> = {
   "/img/ai/panel-1-svila.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAgCdASoQAAsAA4BaJYgCdAEPS9VKwXIAAP7oTgmW5vg1qY6GOcsD1sqIN7Kc8MtjAVgATK024AAA",
   "/img/ai/panel-2.webp": "data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoQAAsAA4BaJZQAAudF/GF4AP71eFzsBPPrd3vYDgA=",
   "/img/ai/panel-3.webp": "data:image/webp;base64,UklGRjIAAABXRUJQVlA4ICYAAABwAQCdASoQAAsAA4BaJZQCdAFAAAD+8EoNbPMrBE3pqB000t6AAA==",
-  "/img/ai/panel-4-admin.webp": "data:image/webp;base64,UklGRjQAAABXRUJQVlA4ICgAAACQAQCdASoQAAsAA4BaJY2M+RgAiwAA/vBn5bbylXv3Bf06iKhklgAA",
   "/img/ai/panel-5-svjetlo.webp": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAsAA4BaJZgCdADbZgmVC4AA/ubSWVlbY2AP8zp+r2i6uvMDWcuaWeByWitIycO1mAAA",
   "/img/ai/panel-6.webp": "data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADwAQCdASoQAAsAA4BaJZQCdAEK4kztqgAA/vYPkIDxX5Nhi+DAXJ31RvHZw0VjiqCAAA==",
 };
