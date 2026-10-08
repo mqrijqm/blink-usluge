@@ -22,8 +22,8 @@ export const services: Service[] = [
     p1: "Web i mobilne proizvode gradimo od temelja, prilagođene vašoj poslovnoj logici i stvarnim korisnicima. Od arhitekture do isporuke, sve nastaje kod nas.",
     p2: "Ne sklapamo gotove šablone. Svaki sistem dizajniramo da raste s vama i ostane jednostavan za održavanje i kada postane ozbiljan.",
     price: "Web aplikacija od 6.500 € · 6+ sedmica",
-    image: "/img/ai/panel-1-metar.webp",
-    alt: "Krem krojački metar sa narandžastim šavom, izbliza, u mekoj bijeloj izmaglici",
+    image: "/img/ai/panel-1-svila.webp",
+    alt: "Svilena perlasto bijela površina sa zlatnim svjetlom koje klizi po grebenu nabora",
     link: { label: "goldenstandard.eu", href: "https://goldenstandard.eu" },
   },
   {
@@ -66,8 +66,8 @@ export const services: Service[] = [
     p1: "Skalabilna infrastruktura koja izdrži kada postane ozbiljno, mikroservisi, event-driven tokovi, sharding i zero-downtime deploy.",
     p2: "Čisti API-ji (REST, WebSocket), jasna dokumentacija i sistemi koje je lako proširiti, temelj na koji se ostatak tima može osloniti.",
     price: "Razvojno partnerstvo od 2.500 € mjesečno",
-    image: "/img/ai/panel-5-api.webp",
-    alt: "Tok API kartica povezanih linijama, na tamnoj podlozi od narandžastih piksela",
+    image: "/img/ai/panel-5-svjetlo.webp",
+    alt: "Snop svjetla pogađa mrežu piksela u mraku, pikseli žare narandžasto i zlatno",
     link: { label: "arky.studioblink.ba", href: "https://arky.studioblink.ba" },
   },
   {
@@ -130,6 +130,7 @@ export const links = {
   email: "mailto:kontakt@studioblink.ba",
   jjovan: "https://jjovan.com",
 };
+
 
 
 
