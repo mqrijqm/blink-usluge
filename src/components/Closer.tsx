@@ -3,7 +3,7 @@
 import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { EclipseRow } from "./Eclipse";
+import { EclipseColumn } from "./Eclipse";
 import { links } from "@/data/services";
 
 export default function Closer() {
@@ -17,14 +17,6 @@ export default function Closer() {
 
     const mm = gsap.matchMedia();
     mm.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.from(q(".eclipse-item"), {
-        scale: 0.4,
-        opacity: 0,
-        duration: 1.3,
-        ease: "power3.out",
-        stagger: { each: 0.08, from: "center" },
-        scrollTrigger: { trigger: el, start: "top 70%", toggleActions: "play none none reverse" },
-      });
       gsap.from(q(".closer-in"), {
         y: 40,
         opacity: 0,
@@ -39,11 +31,10 @@ export default function Closer() {
 
   return (
     <footer ref={root} id="kontakt" className="relative flex min-h-[100svh] flex-col overflow-hidden bg-dark text-krem">
-      <div className="label absolute left-5 top-10 text-zar md:left-14">[ Kontakt ]</div>
+      <EclipseColumn dark sizes={[176, 112, 216, 140]} />
+      <div className="label absolute left-5 top-10 z-[1] text-zar md:left-14">[ Kontakt ]</div>
 
-      <div className="relative flex flex-1 flex-col items-center justify-center gap-8 px-5 py-28 text-center">
-        <EclipseRow dark count={7} size={104} gap={26} className="max-md:hidden" />
-        <EclipseRow dark count={3} size={90} gap={20} className="md:hidden" />
+      <div className="relative z-[1] flex flex-1 flex-col items-center justify-center gap-8 px-5 py-28 text-center">
 
         <a
           href={links.email}
@@ -61,7 +52,7 @@ export default function Closer() {
         </p>
       </div>
 
-      <div className="label flex flex-col justify-between gap-2 border-t border-krem/12 px-5 py-6 text-krem/55 md:flex-row md:px-14">
+      <div className="label relative z-[1] flex flex-col justify-between gap-2 border-t border-krem/12 px-5 py-6 text-krem/55 md:flex-row md:px-14">
         <a href={links.jjovan} className="transition-colors hover:text-zar">
           Tehnika i razvoj, jjovan.com ↗
         </a>
