@@ -37,12 +37,12 @@ export default function OStudiju() {
       gsap.to(badge, {
         y: () => rule.offsetHeight + ruleMargin,
         ease: "none",
-        scrollTrigger: { trigger: el, start: "top 60%", end: "bottom 30%", scrub: true, invalidateOnRefresh: true },
+        scrollTrigger: { trigger: el, start: "top 15%", end: "bottom 25%", scrub: true, invalidateOnRefresh: true },
       });
       gsap.fromTo(
         rule,
         { scaleY: 1 },
-        { scaleY: 0, ease: "none", scrollTrigger: { trigger: el, start: "top 60%", end: "bottom 30%", scrub: true } },
+        { scaleY: 0, ease: "none", scrollTrigger: { trigger: el, start: "top 15%", end: "bottom 25%", scrub: true } },
       );
     });
     return () => mm.revert();
@@ -53,8 +53,8 @@ export default function OStudiju() {
       <div className="grid min-h-[78svh] gap-14 md:grid-cols-2 md:gap-6">
         {/* Lijevo: znak, linija, strelica */}
         <div className="relative min-h-[360px] md:min-h-0" aria-hidden="true">
-          <div className="absolute inset-y-0 left-0 flex w-[clamp(90px,9vw,128px)] flex-col items-center md:left-6">
-            <div className="ob-badge relative size-[clamp(90px,9vw,128px)] shrink-0 will-change-transform">
+          <div className="absolute inset-y-0 left-0 flex w-[clamp(124px,12.5vw,184px)] flex-col items-center md:left-6">
+            <div className="ob-badge relative size-[clamp(124px,12.5vw,184px)] shrink-0 will-change-transform">
               <svg viewBox="0 0 120 120" className="ob-spin size-full">
                 <defs>
                   <path id="obBadgePath" d="M60,60 m-44,0 a44,44 0 1,1 88,0 a44,44 0 1,1 -88,0" />
@@ -65,7 +65,7 @@ export default function OStudiju() {
                   </textPath>
                 </text>
               </svg>
-              <span className="absolute left-1/2 top-1/2 size-[6px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-zar" />
+              <span className="absolute left-1/2 top-1/2 size-[8px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-zar" />
             </div>
             <span className="ob-rule my-[18px] w-[1.5px] flex-1 origin-bottom bg-zar will-change-transform" />
             <svg viewBox="0 0 16 26" fill="none" className="ob-arrow h-6 w-[15px] shrink-0 text-zar">

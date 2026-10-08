@@ -90,19 +90,21 @@ export type Showcase = {
   color: string;
   shape: "portrait" | "landscape";
   alt: string;
+  /** sajt na koji slika vodi (otvara se u novom tabu) */
+  href: string;
 };
 
 // Radovi u stubu: naizmjenično vertikalne (4:5) i horizontalne (1916:821), svi iste veličine unutar svog tipa.
 const w = (name: string) => ({ bw: `/img/work/${name}-bw.webp`, color: `/img/work/${name}-color.webp` });
 export const showcase: Showcase[] = [
   // Strogo naizmjenično: vertikalna, horizontalna, vertikalna, horizontalna...
-  { ...w("v1-urbano"), shape: "portrait", alt: "Urbano aplikacija na telefonu u ruci, u gradu" },
-  { ...w("h1-lana"), shape: "landscape", alt: "Lana Zrnić, portfolio skulptorke, galerija fotografija" },
-  { ...w("v2-sto"), shape: "portrait", alt: "Mramorni sto Calacatta sa karticom proizvoda" },
-  { ...w("h7-hermes"), shape: "landscape", alt: "Arky: pozadina sajta na jednom mjestu, kameni Hermes sa modulima" },
-  { ...w("v7-mlijeko"), shape: "portrait", alt: "Golden Standard barista mlijeko, četiri tetrapaka u rukama" },
-  { ...w("h5-orbita"), shape: "landscape", alt: "Nova Forma Orbita, svjetiljka od opala na plavom zidu" },
-  { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž" },
+  { ...w("v1-urbano"), shape: "portrait", alt: "Urbano aplikacija na telefonu u ruci, u gradu", href: "https://urbano.ba" },
+  { ...w("h1-lana"), shape: "landscape", alt: "Lana Zrnić, portfolio skulptorke, galerija fotografija", href: "https://lanaz.art" },
+  { ...w("v2-sto"), shape: "portrait", alt: "Mramorni sto Calacatta sa karticom proizvoda", href: "https://studioblink.ba/case-longi?lang=bs" },
+  { ...w("h7-hermes"), shape: "landscape", alt: "Arky: pozadina sajta na jednom mjestu, kameni Hermes sa modulima", href: "https://arky.studioblink.ba" },
+  { ...w("v7-mlijeko"), shape: "portrait", alt: "Golden Standard barista mlijeko, četiri tetrapaka u rukama", href: "https://goldenstandard.eu" },
+  { ...w("h5-orbita"), shape: "landscape", alt: "Nova Forma Orbita, svjetiljka od opala na plavom zidu", href: "https://studioblink.ba/case-nova-forma?lang=bs" },
+  { ...w("v4-oko"), shape: "portrait", alt: "Kameni fragment skulpture sa okom, kolaž", href: "https://studioblink.ba/?lang=bs" },
 ];
 
 export type InspoSlot = "tr" | "br" | "tl" | "bl";

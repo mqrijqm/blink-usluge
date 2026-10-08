@@ -125,8 +125,12 @@ export default function Stack() {
       <div className="relative flex flex-col items-center gap-[clamp(120px,26svh,280px)] pb-[26svh]">
         {showcase.map((s, i) => (
           <figure key={s.bw} className="stack-item rv-item relative z-[1] flex w-full justify-center">
-            <div
-              className={`group relative overflow-hidden ${
+            <a
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label={`Otvori: ${s.alt}`}
+              className={`group relative block overflow-hidden ${
                 s.shape === "portrait"
                   ? "aspect-[4/5] w-[min(62vw,320px)]"
                   : "aspect-[1916/821] w-[min(88vw,600px)]"
@@ -155,7 +159,7 @@ export default function Stack() {
                   className="object-cover opacity-0 transition-opacity duration-700 ease-out motion-reduce:transition-none [@media(any-hover:hover)]:group-hover:opacity-100 [@media(any-hover:none)]:data-[focus=true]:opacity-100"
                 />
               </div>
-            </div>
+            </a>
           </figure>
         ))}
       </div>
