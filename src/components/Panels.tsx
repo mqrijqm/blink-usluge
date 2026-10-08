@@ -112,12 +112,12 @@ export default function Panels() {
                     href={s.link.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group mt-5 inline-flex h-10 items-center gap-3 border border-ink/70 px-4 text-[13px] font-normal text-ink transition-colors duration-300 hover:bg-ink hover:text-bg"
+                    className="group mt-6 inline-flex h-12 items-center gap-4 border border-ink/70 px-6 text-[15px] font-normal text-ink transition-colors duration-300 hover:bg-ink hover:text-bg"
                   >
                     {s.link.label}
                     <svg
-                      width="16"
-                      height="16"
+                      width="20"
+                      height="20"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"

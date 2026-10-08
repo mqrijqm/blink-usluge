@@ -24,6 +24,7 @@ export const services: Service[] = [
     price: "Web aplikacija od 6.500 € · 6+ sedmica",
     image: "/img/ai/panel-1.webp",
     alt: "Apstraktna slika: slojevite krem ploče precizno uklopljene, jedna narandžasta ivica",
+    link: { label: "goldenstandard.eu", href: "https://goldenstandard.eu" },
   },
   {
     n: "02",
@@ -34,6 +35,7 @@ export const services: Service[] = [
     price: "AI asistent od 3.500 € · 4+ sedmice",
     image: "/img/ai/panel-2.webp",
     alt: "Apstraktna slika: konstelacija svijetlih tačaka koje se slivaju u jedan narandžasti čvor",
+    link: { label: "uizlogu.com", href: "https://uizlogu.com" },
   },
   {
     n: "03",
@@ -55,6 +57,7 @@ export const services: Service[] = [
     price: "Prototip od 1.500 € · 1–2 sedmice",
     image: "/img/ai/panel-4.webp",
     alt: "Apstraktna slika: stepenice od krem blokova koji rastu na narandžastoj pozadini",
+    link: { label: "omaska.app", href: "https://omaska.app" },
   },
   {
     n: "05",
@@ -65,6 +68,7 @@ export const services: Service[] = [
     price: "Razvojno partnerstvo od 2.500 € mjesečno",
     image: "/img/ai/panel-5.webp",
     alt: "Apstraktna slika: tamni vertikalni stubovi i kablovi sa tankim narandžastim prorezom",
+    link: { label: "arky.studioblink.ba", href: "https://arky.studioblink.ba" },
   },
   {
     n: "06",
@@ -75,6 +79,7 @@ export const services: Service[] = [
     price: "Vizuelni identitet od 3.000 € · 2–3 sedmice",
     image: "/img/ai/panel-6.webp",
     alt: "Apstraktna slika: crni krug i letva utisnuti u krem papir sa malom narandžastom tačkom",
+    link: { label: "pcelarstvojevtic.com", href: "https://pcelarstvojevtic.com" },
   },
 ];
 
@@ -125,4 +130,5 @@ export const links = {
   email: "mailto:kontakt@studioblink.ba",
   jjovan: "https://jjovan.com",
 };
+
 
